@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>网红为什么这么火</title>
+<meta name="description" content="写给小学生的分享课：网红用的五招、为什么管用、要小心什么，以及好老师“搭梯子”的做法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网红为什么这么火？">
+<meta property="og:description" content="网红让你觉得舒服，好老师让你变得厉害。五招、三个小故事和一个小测验。">
+<meta name="theme-color" content="#EEF6FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F1828" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F2B705'/%3E%3Cpath d='M14 32 C14 22 28 19 32 29 C36 19 50 22 50 32 C50 44 32 52 32 52 C32 52 14 44 14 32 Z' fill='%23B8402A'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700;900&display=swap"></noscript>
+<style>
+/* Layout: 绘本式单栏。每一招是一张小卡片，左边一幅简笔画，右边几句话；手机上画在上、字在下。颜色只给插图和两种角色：网红（珊瑚色）、好老师（青绿色） */
+:root{
+  --bg:#EEF6FB; --surface:#FBFDFF; --ink:#1D2A44; --muted:#4C5B73; --line:#CFE0EC;
+  --sun:#F2B705; --sun-soft:#FFF3C4; --on-sun:#1D2A44;
+  --hot:#B8402A; --hot-fill:#F08A72; --hot-soft:#FCE6DF;
+  --cool:#147366; --cool-fill:#5CC0B0; --cool-soft:#DDF3EE;
+  --grass:#6BAA4F; --wood:#B98A56; --sky:#A9D8F5;
+  --font:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1828; --surface:#16233A; --ink:#E8EEF6; --muted:#AAB7C9; --line:#27374F;
+  --sun:#F2C230; --sun-soft:#3A3112; --hot:#FF9C84; --hot-fill:#E36E55; --hot-soft:#3B2019;
+  --cool:#72D8C6; --cool-fill:#2E9A8A; --cool-soft:#12302C; --grass:#79BC5C; --wood:#C99D69; --sky:#3D6F96; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1828; --surface:#16233A; --ink:#E8EEF6; --muted:#AAB7C9; --line:#27374F;
+  --sun:#F2C230; --sun-soft:#3A3112; --hot:#FF9C84; --hot-fill:#E36E55; --hot-soft:#3B2019;
+  --cool:#72D8C6; --cool-fill:#2E9A8A; --cool-soft:#12302C; --grass:#79BC5C; --wood:#C99D69; --sky:#3D6F96; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:19px;line-height:1.9;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+p{margin:0 0 .9em}
+
+.hero{max-width:960px;margin:0 auto;padding-block:48px 16px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:center}
+.kicker{display:inline-block;font-size:15px;font-weight:700;color:var(--on-sun);background:var(--sun);border-radius:999px;padding:4px 14px;margin:0}
+h1{font-size:clamp(38px,7.5vw,64px);font-weight:900;line-height:1.15;margin:16px 0 14px;text-wrap:balance}
+.lead{font-size:20px;color:var(--muted);margin:0}
+.hero svg{width:100%;max-width:300px;height:auto;justify-self:center}
+
+section{max-width:760px;margin:0 auto;padding-block:36px}
+h2{font-size:clamp(27px,4.6vw,36px);font-weight:900;line-height:1.3;margin:0 0 18px;text-wrap:balance}
+.comic{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 18px}
+.panel{background:var(--surface);border:2px solid var(--ink);border-radius:16px;padding:14px 16px;font-size:17px;line-height:1.75;min-width:0}
+.no{display:flex;width:30px;height:30px;border-radius:50%;background:var(--sun);color:var(--on-sun);font-weight:900;align-items:center;justify-content:center;font-size:15px;margin-bottom:8px}
+.big{font-size:21px;font-weight:700;line-height:1.75;background:var(--sun-soft);border-radius:16px;padding:16px 20px;margin:0}
+.big b{color:var(--hot)}
+
+.move{display:grid;grid-template-columns:150px minmax(0,1fr);gap:22px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 22px;margin:0 0 16px}
+.move svg{width:150px;max-width:100%;height:auto}
+.lab{font-size:15px;font-weight:700;color:var(--hot);margin:0 0 2px}
+.move h3{font-size:24px;font-weight:900;line-height:1.4;margin:0 0 8px}
+.move p{font-size:18px;line-height:1.85;margin:0 0 .7em}
+.move p:last-child{margin-bottom:0}
+.why{background:var(--hot-soft);border-radius:12px;padding:10px 14px}
+.why b{color:var(--hot)}
+.eg{color:var(--muted);font-size:17px}
+
+.duo{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:24px;align-items:center}
+.duo svg{width:100%;max-width:190px;height:auto;justify-self:center}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px;min-width:0}
+.card h3{font-size:20px;font-weight:900;line-height:1.5;margin:0 0 6px}
+.card p{font-size:17px;line-height:1.8;margin:0}
+.rules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}
+.rule{background:var(--cool-soft);border-radius:16px;padding:14px 16px;font-weight:700;font-size:18px;line-height:1.7}
+.rule span{display:block;font-size:14px;color:var(--cool)}
+
+.quiz{display:flex;flex-direction:column;gap:12px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.qs{font-size:19px;font-weight:700;margin:0 0 10px}
+.qb{display:flex;flex-wrap:wrap;gap:8px}
+.qb button{font:inherit;font-size:16px;font-weight:700;line-height:1.5;border-radius:999px;padding:6px 16px;cursor:pointer;border:2px solid currentColor;background:transparent}
+.qb .hot{color:var(--hot)}
+.qb .cool{color:var(--cool)}
+.qb .hot[aria-pressed="true"]{background:var(--hot);border-color:var(--hot);color:var(--surface)}
+.qb .cool[aria-pressed="true"]{background:var(--cool);border-color:var(--cool);color:var(--surface)}
+.qb button:disabled{cursor:default}
+.qb button:disabled:not([aria-pressed="true"]){opacity:.45}
+.qf{font-size:17px;line-height:1.75;margin:10px 0 0;color:var(--muted)}
+.qf b{color:var(--ink)}
+.qend{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:6px}
+.score{font-size:19px;font-weight:900;margin:0}
+.again{font:inherit;font-size:16px;font-weight:700;border:2px solid var(--ink);background:transparent;color:var(--ink);border-radius:999px;padding:5px 16px;cursor:pointer}
+.end{font-size:23px;font-weight:900;line-height:1.65;background:var(--sun);color:var(--on-sun);border-radius:20px;padding:22px 24px;margin:0}
+.foot{max-width:760px;margin:8px auto 0;font-size:14px;line-height:1.7;color:var(--muted)}
+
+.l{fill:none;stroke:var(--ink);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.thin{stroke-width:2}
+.rail{fill:none;stroke:var(--wood);stroke-width:7;stroke-linecap:round}
+.rung{fill:none;stroke:var(--wood);stroke-width:5;stroke-linecap:round}
+.f-sun{fill:var(--sun)} .f-hot{fill:var(--hot-fill)} .f-cool{fill:var(--cool-fill)} .f-grass{fill:var(--grass)}
+.f-wood{fill:var(--wood)} .f-sky{fill:var(--sky)} .f-paper{fill:var(--surface)} .f-ink{fill:var(--ink)}
+.t{fill:var(--ink);font-family:var(--font);font-weight:900;font-size:13px}
+.t-big{font-size:26px}
+.t-hot{fill:var(--hot)}
+.t-muted{fill:var(--muted)}
+
+@media (max-width:640px){
+  body{font-size:18px}
+  .hero{grid-template-columns:minmax(0,1fr);padding-block:28px 4px}
+  .hero svg{max-width:220px}
+  .comic,.cards,.rules{grid-template-columns:minmax(0,1fr)}
+  .move{grid-template-columns:minmax(0,1fr);gap:10px}
+  .move svg{width:130px}
+  .duo{grid-template-columns:minmax(0,1fr)}
+  .duo svg{max-width:170px}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div>
+    <p class="kicker">给小朋友的分享课</p>
+    <h1>网红为什么这么火？</h1>
+    <p class="lead">有的人说话，大家都爱听，点赞好几万；有的人说的是真话，却没人听。这一页用几个小故事讲清楚：网红用了哪几招，为什么这么管用，又有什么要小心的。</p>
+  </div>
+  <svg viewBox="0 0 220 240" role="img" aria-label="一部手机，屏幕上有一个人，旁边飘着爱心，下面写着十万加赞">
+    <rect x="50" y="20" width="120" height="204" rx="22" class="f-paper"/><rect x="50" y="20" width="120" height="204" rx="22" class="l"/>
+    <rect x="62" y="42" width="96" height="140" rx="10" class="f-sky"/>
+    <circle cx="110" cy="92" r="18" class="f-hot"/><path d="M103 96 q7 6 14 0" class="l thin"/>
+    <path d="M80 152 C82 122 138 122 140 152 Z" class="f-hot"/>
+    <path transform="translate(168 30) scale(1.3)" d="M0 6 C0 0 8 -2 10 4 C12 -2 20 0 20 6 C20 13 10 18 10 18 C10 18 0 13 0 6 Z" class="f-hot"/>
+    <path transform="translate(16 74) scale(1)" d="M0 6 C0 0 8 -2 10 4 C12 -2 20 0 20 6 C20 13 10 18 10 18 C10 18 0 13 0 6 Z" class="f-hot"/>
+    <path transform="translate(176 112) scale(.9)" d="M0 6 C0 0 8 -2 10 4 C12 -2 20 0 20 6 C20 13 10 18 10 18 C10 18 0 13 0 6 Z" class="f-sun"/>
+    <rect x="70" y="192" width="80" height="22" rx="11" class="f-sun"/>
+    <text x="110" y="208" text-anchor="middle" class="t" style="fill:var(--on-sun)">10万+ 赞</text>
+  </svg>
+</header>
+
+<main>
+  <section>
+    <h2>先讲一个小故事</h2>
+    <div class="comic">
+      <div class="panel"><span class="no">1</span>过年回家，二舅一直在看一位“大师”的视频。大师说的话，让二舅觉得自己特别厉害、特别骄傲。</div>
+      <div class="panel"><span class="no">2</span>大师越说越离谱，连“外国历史书上的古人可能根本不存在”都说出来了。你忍不住说：“这不对！”二舅一下子就生气了。</div>
+      <div class="panel"><span class="no">3</span>后来你想明白了：不是大师改变了二舅，是二舅需要这样一位大师。大师给他的，是开心和骄傲的感觉。</div>
+    </div>
+    <p class="big">网红的秘密就藏在这里：他们做的是<b>“对方需要的人”</b>。你需要开心，他就让你开心；你需要安心，他就让你安心。</p>
+  </section>
+
+  <section>
+    <h2>网红的五招</h2>
+    <p>下面这五招，几乎每个很火的网红都在用。每一招都说清楚两件事：它是什么，为什么这么管用。</p>
+
+    <div class="move">
+      <svg viewBox="0 0 200 130" role="img" aria-label="一段台阶：你站在第一级，网红站在第二级，高手站在最上面">
+        <path d="M8 120 V104 H34 V88 H60 V72 H86 V56 H112 V40 H138 V24 H192 V120 Z" class="f-sky"/>
+        <path d="M8 120 V104 H34 V88 H60 V72 H86 V56 H112 V40 H138 V24 H192 V120 Z" class="l"/>
+        <circle cx="21" cy="95" r="7" class="f-sun"/><circle cx="47" cy="79" r="7" class="f-hot"/><circle cx="165" cy="15" r="7" class="f-cool"/>
+        <text x="15" y="116" class="t">你</text><text x="34" y="116" class="t">网红</text><text x="152" y="116" class="t">高手</text>
+      </svg>
+      <div>
+        <p class="lab">第一招</p>
+        <h3>只比你高一点点</h3>
+        <p>讲的东西太难，你听不懂，像听天书；太简单，你又觉得没意思。只比你高一级台阶，你一听就：“哇，我懂了！”</p>
+        <p class="why"><b>为什么管用：</b>听懂的人特别开心，还会马上讲给别人听，所以传得最快。</p>
+        <p class="eg">比如做题时，同桌讲的方法有时比老师讲的还好懂，因为他只比你多会一步。</p>
+      </div>
+    </div>
+
+    <div class="move">
+      <svg viewBox="0 0 160 100" role="img" aria-label="一颗包着糖纸的糖">
+        <polygon points="22,50 50,32 50,68" class="f-sun"/><polygon points="22,50 50,32 50,68" class="l"/>
+        <polygon points="138,50 110,32 110,68" class="f-sun"/><polygon points="138,50 110,32 110,68" class="l"/>
+        <ellipse cx="80" cy="50" rx="34" ry="22" class="f-hot"/><ellipse cx="80" cy="50" rx="34" ry="22" class="l"/>
+        <path d="M64 32 q8 18 0 36 M80 28 q8 22 0 44 M96 32 q8 18 0 36" class="l thin"/>
+      </svg>
+      <div>
+        <p class="lab">第二招</p>
+        <h3>说你想听的</h3>
+        <p>人都喜欢听让自己舒服的话：你很棒，你没错，都是别人不好。网红就专门说这些话，做你需要的那个人。</p>
+        <p class="why"><b>为什么管用：</b>舒服的话像糖，甜甜的，谁都爱吃。听的人会一直回来，越来越离不开他。</p>
+        <p class="eg">可是糖很甜，却不能当饭吃。</p>
+      </div>
+    </div>
+
+    <div class="move">
+      <svg viewBox="0 0 160 110" role="img" aria-label="一个对话框，里面写着肯定">
+        <path d="M38 14 H122 Q140 14 140 32 V56 Q140 74 122 74 H76 L50 96 L56 74 H38 Q20 74 20 56 V32 Q20 14 38 14 Z" class="f-paper"/>
+        <path d="M38 14 H122 Q140 14 140 32 V56 Q140 74 122 74 H76 L50 96 L56 74 H38 Q20 74 20 56 V32 Q20 14 38 14 Z" class="l"/>
+        <text x="80" y="54" text-anchor="middle" class="t t-big t-hot">肯定！</text>
+        <text x="146" y="102" class="t t-muted">？</text><text x="4" y="22" class="t t-muted">？</text>
+      </svg>
+      <div>
+        <p class="lab">第三招</p>
+        <h3>说得特别肯定</h3>
+        <p>明天会不会下雨？考试会不会考这道题？很多事没有人知道，所以人会担心。这时候谁拍着胸脯说“肯定会！”，大家就爱听谁。</p>
+        <p class="why"><b>为什么管用：</b>肯定的话让人安心。就算他经常说错，大家还是觉得他很厉害。</p>
+        <p class="eg">真正懂的人，反而常说“可能”“要看情况”，听起来没那么厉害。</p>
+      </div>
+    </div>
+
+    <div class="move">
+      <svg viewBox="0 0 160 120" role="img" aria-label="一个戴草帽的稻草人，旁边写着啪">
+        <rect x="77" y="40" width="6" height="76" class="f-wood"/><rect x="40" y="52" width="80" height="6" class="f-wood"/>
+        <path d="M40 55 l-8 -6 M40 55 l-8 6 M120 55 l8 -6 M120 55 l8 6" class="l thin"/>
+        <path d="M62 50 H98 L92 92 H68 Z" class="f-hot"/><path d="M62 50 H98 L92 92 H68 Z" class="l"/>
+        <circle cx="80" cy="34" r="14" class="f-sun"/><circle cx="80" cy="34" r="14" class="l"/>
+        <path d="M64 24 L80 4 L96 24 Z" class="f-wood"/><path d="M64 24 L80 4 L96 24 Z" class="l"/><path d="M56 24 H104" class="l"/>
+        <circle cx="75" cy="33" r="2" class="f-ink"/><circle cx="85" cy="33" r="2" class="f-ink"/><path d="M75 39 q5 4 10 0" class="l thin"/>
+        <text x="112" y="104" class="t t-big t-hot">啪！</text>
+      </svg>
+      <div>
+        <p class="lab">第四招</p>
+        <h3>先把别人说傻，再打倒</h3>
+        <p>有人故意把别人的意思说成一个很傻的样子，就像扎了一个稻草人，然后一拳把它打倒。</p>
+        <p class="why"><b>为什么管用：</b>看的人觉得好爽：“说得太对了！”可是被打倒的只是稻草人，不是别人真正说的话。</p>
+      </div>
+    </div>
+
+    <div class="move">
+      <svg viewBox="0 0 160 120" role="img" aria-label="一个亮起来的灯泡，旁边写着啊哈">
+        <path d="M80 6 V18 M44 22 L52 30 M116 22 L108 30 M28 58 H40 M120 58 H132" class="l"/>
+        <circle cx="80" cy="56" r="28" class="f-sun"/><circle cx="80" cy="56" r="28" class="l"/>
+        <path d="M70 60 q5 -10 10 0 q5 10 10 0" class="l thin"/>
+        <rect x="68" y="84" width="24" height="16" rx="4" class="f-paper"/><rect x="68" y="84" width="24" height="16" rx="4" class="l"/>
+        <text x="100" y="116" class="t t-hot" style="font-size:18px">啊哈！</text>
+      </svg>
+      <div>
+        <p class="lab">第五招</p>
+        <h3>给你“啊哈！”的感觉</h3>
+        <p>突然想通的那一下，特别爽，像灯泡一下子亮了。</p>
+        <p class="why"><b>为什么管用：</b>科学家做过实验：人在“啊哈”之后，会更容易相信刚听到的话是真的，哪怕这两件事一点关系都没有。</p>
+        <p class="eg">所以“我觉得懂了”，不一定是真的懂了。</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>说得通，不一定说得对</h2>
+    <div class="duo">
+      <div>
+        <p>井底的青蛙说：“天只有井口那么大。”在井里看，这句话完全说得通，可它不对。</p>
+        <p>网红的话也常常这样：在一小块地方说得通，就当成了全世界。就像只拿到一块拼图，就说自己知道整张图画的是什么。</p>
+        <p>还有一件事：我们只看得见成功的人。一百个人照着网红的办法去做，赢的那一个上了视频，输掉的九十九个，没有人看见。</p>
+      </div>
+      <svg viewBox="0 0 220 150" role="img" aria-label="井底的青蛙抬头看着井口那一小片天，说天就这么大">
+        <path d="M6 30 H40 M124 30 H214" class="l"/>
+        <rect x="40" y="30" width="14" height="112" class="f-wood"/><rect x="40" y="30" width="14" height="112" class="l"/>
+        <rect x="110" y="30" width="14" height="112" class="f-wood"/><rect x="110" y="30" width="14" height="112" class="l"/>
+        <path d="M54 142 H110" class="l"/>
+        <ellipse cx="82" cy="22" rx="30" ry="9" class="f-sky"/><ellipse cx="82" cy="22" rx="30" ry="9" class="l thin"/>
+        <ellipse cx="82" cy="124" rx="20" ry="13" class="f-grass"/><ellipse cx="82" cy="124" rx="20" ry="13" class="l"/>
+        <circle cx="72" cy="110" r="6" class="f-paper"/><circle cx="72" cy="110" r="6" class="l thin"/>
+        <circle cx="92" cy="110" r="6" class="f-paper"/><circle cx="92" cy="110" r="6" class="l thin"/>
+        <circle cx="72" cy="110" r="2" class="f-ink"/><circle cx="92" cy="110" r="2" class="f-ink"/>
+        <path d="M75 127 q7 5 14 0" class="l thin"/>
+        <text x="132" y="72" class="t">天就这么大！</text>
+        <path d="M134 80 L102 104" class="l thin"/>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <h2>这几招，要小心什么</h2>
+    <div class="cards">
+      <div class="card"><h3>听的人：开心了，本领没长</h3><p>听完觉得很有帮助，可这种帮助变不成本领。看了一百个游泳视频，不下水，还是不会游泳。</p></div>
+      <div class="card"><h3>说的人：说久了，自己都信了</h3><p>一开始是“我知道不太对，可是大家爱听”，后来就变成“我真的就是这么想的”。他变成了他的观众。</p></div>
+      <div class="card"><h3>一下子全押上，迟早输光</h3><p>有的网红总是把所有东西都押上，这叫“梭哈”。赢的时候很风光，可只要输一次，就什么都没了。聪明人总会留一点力气。</p></div>
+      <div class="card"><h3>网红希望你一直需要他</h3><p>你越离不开他，他的视频就越有人看。好老师正好相反：他希望你有一天不再需要他。</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>还有一种分享：搭梯子</h2>
+    <div class="duo">
+      <div>
+        <p>好老师也只比你高一级，可他不会一直停在那里。他会搭一架梯子，带你一级一级往上爬。等你会了，就把梯子拆掉，让你自己走。</p>
+        <p>他守着两条规矩：</p>
+      </div>
+      <svg viewBox="0 0 170 140" role="img" aria-label="一架靠着的梯子，一个人正在往上爬，梯子顶上有一颗星星">
+        <path d="M40 134 L88 14 M74 134 L122 14" class="rail"/>
+        <path d="M47.2 116 H81.2 M56.8 92 H90.8 M66.4 68 H100.4 M76 44 H110" class="rung"/>
+        <rect x="76" y="48" width="12" height="18" rx="5" class="f-cool"/><circle cx="82" cy="41" r="7" class="f-cool"/>
+        <path d="M138 6 L141.5 15.5 L151.5 16 L143.5 22.5 L146.5 32 L138 26.5 L129.5 32 L132.5 22.5 L124.5 16 L134.5 15.5 Z" class="f-sun"/>
+        <path d="M138 6 L141.5 15.5 L151.5 16 L143.5 22.5 L146.5 32 L138 26.5 L129.5 32 L132.5 22.5 L124.5 16 L134.5 15.5 Z" class="l thin"/>
+      </svg>
+    </div>
+    <div class="rules">
+      <p class="rule"><span>规矩一</span>从你的问题开始讲，让你接得住。</p>
+      <p class="rule"><span>规矩二</span>不为了让你高兴，把真话改成假话。</p>
+    </div>
+    <p>不想吵架的时候，可以不说话；但不要为了讨好别人，说自己都不相信的话。就像故事里，你可以不跟二舅争，但不要跟着大师一起说假话。</p>
+  </section>
+
+  <section>
+    <h2>考考你：这是网红的招，还是好老师的做法？</h2>
+    <div class="quiz" id="quiz">
+      <div class="q" data-a="hot" data-f="这是第三招：说得特别肯定。真正的学习，很少有“保证”。">
+        <p class="qs">“只要记住这一个口诀，保证全对！”</p>
+        <div class="qb"><button type="button" class="hot" data-v="hot" aria-pressed="false">网红的招</button><button type="button" class="cool" data-v="cool" aria-pressed="false">好老师的做法</button></div>
+        <p class="qf" hidden></p>
+      </div>
+      <div class="q" data-a="cool" data-f="从你卡住的地方开始讲，你才接得住。">
+        <p class="qs">“你先说说是怎么想的？我们从你卡住的地方开始。”</p>
+        <div class="qb"><button type="button" class="hot" data-v="hot" aria-pressed="false">网红的招</button><button type="button" class="cool" data-v="cool" aria-pressed="false">好老师的做法</button></div>
+        <p class="qf" hidden></p>
+      </div>
+      <div class="q" data-a="hot" data-f="这是第四招：先把别人说傻，再打倒。反对他的人，真的这么说过吗？">
+        <p class="qs">“反对我的人，都觉得努力根本没用，太可笑了！”</p>
+        <div class="qb"><button type="button" class="hot" data-v="hot" aria-pressed="false">网红的招</button><button type="button" class="cool" data-v="cool" aria-pressed="false">好老师的做法</button></div>
+        <p class="qf" hidden></p>
+      </div>
+      <div class="q" data-a="cool" data-f="说得出哪里不确定，是真懂的样子。">
+        <p class="qs">“这个办法我也不能保证，要看情况：如果你每天都练，大概会有用。”</p>
+        <div class="qb"><button type="button" class="hot" data-v="hot" aria-pressed="false">网红的招</button><button type="button" class="cool" data-v="cool" aria-pressed="false">好老师的做法</button></div>
+        <p class="qf" hidden></p>
+      </div>
+      <div class="q" data-a="hot" data-f="这是第二招：说你想听的。听着很舒服，可你没有变得更厉害。">
+        <p class="qs">“你一点问题都没有，都是别人的错。”</p>
+        <div class="qb"><button type="button" class="hot" data-v="hot" aria-pressed="false">网红的招</button><button type="button" class="cool" data-v="cool" aria-pressed="false">好老师的做法</button></div>
+        <p class="qf" hidden></p>
+      </div>
+      <div class="q" data-a="cool" data-f="先搭梯子，再慢慢把梯子拆掉，让你自己走。">
+        <p class="qs">“这一步你已经会了，下一步你自己试试，错了我们再一起看。”</p>
+        <div class="qb"><button type="button" class="hot" data-v="hot" aria-pressed="false">网红的招</button><button type="button" class="cool" data-v="cool" aria-pressed="false">好老师的做法</button></div>
+        <p class="qf" hidden></p>
+      </div>
+      <div class="qend"><p class="score" id="score" aria-live="polite">答对 0 题，共 6 题</p><button type="button" class="again" id="again">再来一次</button></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="end">一句话：网红让你觉得舒服，好老师让你变得厉害。能让人听得进去，又不说假话，才是最好的分享。</p>
+  </section>
+</main>
+
+<p class="foot">根据一组关于“分享”的讨论改写。第五招里的实验：Laukkonen 等人，2020 年发表于学术期刊《Cognition》。</p>
+
+<script>
+(function(){
+  var qs=document.querySelectorAll('#quiz .q'),sc=document.getElementById('score'),again=document.getElementById('again'),right=0,done=0;
+  function show(){sc.textContent='答对 '+right+' 题，共 '+qs.length+' 题'+(done===qs.length?(right===qs.length?'，全对，太厉害了！':'。看看上面的解释，再来一次吧。'):'');}
+  qs.forEach(function(q){
+    var bs=q.querySelectorAll('button'),f=q.querySelector('.qf');
+    bs.forEach(function(b){b.addEventListener('click',function(){
+      if(q.getAttribute('data-done'))return;
+      q.setAttribute('data-done','1');done++;
+      var ok=b.getAttribute('data-v')===q.getAttribute('data-a');if(ok)right++;
+      b.setAttribute('aria-pressed','true');bs.forEach(function(x){x.disabled=true;});
+      var name=q.getAttribute('data-a')==='hot'?'网红的招':'好老师的做法';
+      f.innerHTML='<b>'+(ok?'答对了！':'再想想：这是'+name+'。')+'</b>'+q.getAttribute('data-f');
+      f.hidden=false;show();
+    });});
+  });
+  if(again)again.addEventListener('click',function(){
+    right=0;done=0;
+    qs.forEach(function(q){q.removeAttribute('data-done');q.querySelectorAll('button').forEach(function(x){x.disabled=false;x.setAttribute('aria-pressed','false');});var f=q.querySelector('.qf');f.hidden=true;f.innerHTML='';});
+    show();
+  });
+})();
+</script>
+</body>
+</html>
