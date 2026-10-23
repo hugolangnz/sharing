@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>分享让你获得更多</title>
+<meta name="description" content="为什么分享、为什么一流的认知传不出去、怎么分享、怎么知道自己不知道。所有讨论收束为三个生成器：重建、锚、账。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分享让你获得更多">
+<meta property="og:description" content="分享是一台放大器：账决定传多远，重建决定长多深，锚决定放大的是真还是假。">
+<meta name="theme-color" content="#EEF2F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1120" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230E1730'/%3E%3Cpath d='M32 8 L37 27 L56 32 L37 37 L32 56 L27 37 L8 32 L27 27 Z' fill='%23E2BC5E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"></noscript>
+<style>
+/* Layout: 星图式长文。左侧细目录随读随亮，右侧单栏正文；图示与正文同宽，星空面板在两种主题下都是夜色 */
+:root{
+  --bg:#EEF2F6; --surface:#F9FAFC; --ink:#16213A; --muted:#4E5A70; --line:#D3DAE4;
+  --gold:#7F5F14; --gold-soft:#F1E7CF;
+  --real:#1D5C9E; --real-soft:#DCE8F5; --need:#A34A26; --need-soft:#F4E1D8;
+  --sky:#0E1730; --sky-2:#1A2750; --star:#E9EDF5; --star-dim:#93A0BD; --sky-line:#33427040; --sky-text:#C9D1E2; --gold-bright:#E2BC5E;
+  --display:'Noto Serif SC','Songti SC','STSong','SimSun',serif;
+  --body:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  --label:'Noto Sans SC','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B1120; --surface:#111A2D; --ink:#E4E8F0; --muted:#A6B1C4; --line:#26324A;
+  --gold:#D8B25A; --gold-soft:#2A2414; --real:#8DBDF2; --real-soft:#142540; --need:#F0A27C; --need-soft:#301C14;
+  --sky:#070C1A; --sky-2:#121D3D; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B1120; --surface:#111A2D; --ink:#E4E8F0; --muted:#A6B1C4; --line:#26324A;
+  --gold:#D8B25A; --gold-soft:#2A2414; --real:#8DBDF2; --real-soft:#142540; --need:#F0A27C; --need-soft:#301C14;
+  --sky:#070C1A; --sky-2:#121D3D; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.85;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 72px}
+a{color:var(--real)}
+button{font:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* hero */
+.hero{max-width:1180px;margin:0 auto;padding-block:56px 44px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:52px;align-items:center}
+.kicker,.eyebrow,.part,.take span,.tag{font-family:var(--label);font-weight:500;letter-spacing:.12em}
+.kicker{font-size:13px;color:var(--gold);margin:0}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,68px);line-height:1.15;margin:14px 0 18px;letter-spacing:.02em;text-wrap:balance}
+.dek{font-size:18px;color:var(--muted);margin:0 0 24px;max-width:32em}
+.thesis{font-family:var(--display);font-weight:500;font-size:clamp(21px,2.3vw,26px);line-height:1.65;margin:0;padding-top:20px;border-top:1px solid var(--line);text-wrap:balance}
+.thesis b{color:var(--gold);font-weight:700}
+
+/* star map */
+.sky{margin:0;background:radial-gradient(120% 90% at 72% 8%,var(--sky-2),var(--sky));border-radius:18px;padding:16px 16px 18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.sky svg{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:600/420}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font-size:14px;color:var(--star-dim);background:transparent;border:1px solid var(--star-dim);border-radius:999px;padding:5px 14px;cursor:pointer;line-height:1.5}
+.seg button[aria-pressed="true"]{color:var(--sky);background:var(--gold-bright);border-color:var(--gold-bright)}
+.sky figcaption{font-size:14.5px;line-height:1.75;color:var(--sky-text);min-height:5.25em}
+.bg-star,.named{fill:var(--star)}
+.dip{fill:none;stroke:var(--gold-bright);stroke-width:1.6;stroke-linejoin:round;opacity:0;transition:opacity .5s}
+.ptr{stroke:var(--gold-bright);stroke-width:1.5;stroke-dasharray:4 6;opacity:0;transition:opacity .5s}
+.lbl,.ptr-lbl{fill:var(--sky-text);font-size:14px;font-family:var(--body);opacity:0;transition:opacity .5s}
+.ptr-lbl{fill:var(--gold-bright)}
+#sky[data-mode="see"] .dip,#sky[data-mode="edge"] .dip,#sky[data-mode="see"] .lbl{opacity:1}
+#sky[data-mode="edge"] .ptr,#sky[data-mode="edge"] .ptr-lbl,#sky[data-mode="edge"] .lbl.key{opacity:1}
+
+/* layout */
+.layout{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:210px minmax(0,1fr);gap:56px}
+.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;max-height:calc(100vh - 48px);overflow:auto;font-size:14px;line-height:1.55;padding-block:6px}
+.toc ol{list-style:none;margin:0;padding:0}
+.toc .part{display:block;font-size:12px;color:var(--gold);margin:16px 0 4px}
+.toc .part:first-child{margin-top:0}
+.toc a{display:block;color:var(--muted);text-decoration:none;padding:3px 0 3px 12px;border-left:2px solid transparent}
+.toc a:hover{color:var(--ink)}
+.toc a.on{color:var(--ink);border-left-color:var(--gold)}
+main{min-width:0;max-width:760px}
+
+/* sections */
+.sec{padding-block:48px;border-top:1px solid var(--line);scroll-margin-top:16px}
+.sec:first-child{border-top:0;padding-top:4px}
+.eyebrow{font-size:12.5px;color:var(--gold);margin:0 0 8px}
+h2{font-family:var(--display);font-weight:600;font-size:clamp(26px,3.2vw,35px);line-height:1.3;margin:0 0 20px;text-wrap:balance}
+h3{font-size:18px;font-weight:700;line-height:1.55;margin:30px 0 8px}
+.sec p{margin:0 0 1em}
+.ask{display:flex;gap:12px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;color:var(--muted);font-size:16px;line-height:1.8;margin:0 0 22px}
+.ask span{flex:none;font-family:var(--display);font-weight:700;color:var(--gold);font-size:19px;line-height:1.5}
+.take{border-top:2px solid var(--gold);padding-top:12px;margin-top:28px;font-weight:500}
+.take span{display:block;font-size:12px;color:var(--gold);font-weight:400}
+ul.pts,ol.pts{padding-left:1.3em;margin:0 0 1em}
+.pts li{margin:.4em 0}
+.pts li::marker{color:var(--gold)}
+.cards{display:grid;gap:14px;margin:20px 0 24px}
+.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-width:0}
+.card h3{margin:0 0 2px;font-family:var(--display);font-weight:600;font-size:20px}
+.tag{font-size:12px;color:var(--gold);margin:0 0 8px}
+.card p{margin:0;font-size:15.5px;line-height:1.75;color:var(--muted)}
+.card.real{background:var(--real-soft);border-color:transparent}
+.card.real h3,.card.real .tag{color:var(--real)}
+.card.need{background:var(--need-soft);border-color:transparent}
+.card.need h3,.card.need .tag{color:var(--need)}
+.tbl{overflow-x:auto;margin:20px 0 24px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.7;min-width:520px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--gold);white-space:nowrap;font-weight:500}
+blockquote.classic{margin:22px 0;padding:2px 0 2px 18px;border-left:3px solid var(--gold);font-family:var(--display);font-weight:500;font-size:18px;line-height:1.9}
+blockquote.classic cite{display:block;font-family:var(--body);font-style:normal;font-size:13.5px;color:var(--muted);margin-top:6px}
+details.more{border:1px solid var(--line);border-radius:12px;background:var(--surface);margin:20px 0}
+details.more summary{cursor:pointer;padding:12px 18px;font-weight:500;list-style:none}
+details.more summary::-webkit-details-marker{display:none}
+details.more summary::before{content:"＋";color:var(--gold);margin-right:8px}
+details.more[open] summary::before{content:"－"}
+details.more .in{padding:0 18px 6px;font-size:15.5px;line-height:1.85;color:var(--muted)}
+details.more .in p,details.more .in ul{margin:0 0 .9em}
+.fig{margin:22px 0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--surface);min-width:0}
+.fig figcaption{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.75}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font-size:15px}
+.flow .n{background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:5px 14px;line-height:1.5}
+.flow .n b{color:var(--gold);font-weight:500}
+.flow .ar{color:var(--gold)}
+.flow .back{flex-basis:100%;font-size:13.5px;color:var(--muted)}
+
+/* 入口与去向 */
+.quad{display:grid;grid-template-columns:6.5em minmax(0,1fr) minmax(0,1fr);gap:8px}
+.qh{font-size:13px;color:var(--muted);padding:0 4px;align-self:end;line-height:1.5}
+.qr{font-size:13px;color:var(--muted);align-self:center;line-height:1.5}
+.cell{text-align:left;cursor:pointer;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.cell .nm{font-family:var(--display);font-weight:600;font-size:18px;line-height:1.4}
+.cell .ds{font-size:14px;color:var(--muted);line-height:1.6}
+.cell .ax{display:none;font-size:12px;color:var(--muted)}
+.cell.good .nm{color:var(--real)}
+.cell.bad .nm{color:var(--need)}
+.cell[aria-pressed="true"]{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold);background:var(--surface)}
+.drift{grid-column:2 / 4;font-size:13px;color:var(--need);text-align:center;line-height:1.4}
+.qd{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:15.5px;line-height:1.85;color:var(--muted)}
+.qd h3{margin:0 0 6px;color:var(--ink)}
+.qd .chk b{color:var(--gold);font-weight:500;margin-right:8px}
+
+/* 知识之岛 */
+#island{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:600/300}
+.land{fill:var(--gold-soft);stroke:var(--gold);stroke-width:2;stroke-linejoin:round}
+.sea{fill:var(--bg)}
+.ctrls{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;align-items:center;margin-top:12px;font-size:14px;color:var(--muted)}
+.ctrls input{width:100%;accent-color:var(--gold)}
+.readout{font-family:var(--label);font-size:14px;color:var(--ink);margin-top:8px;font-variant-numeric:tabular-nums}
+
+.src ol{padding-left:1.4em;font-size:14.5px;line-height:1.75;color:var(--muted)}
+.src li{margin:.3em 0}
+.foot{max-width:1180px;margin:24px auto 0;font-size:13.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+
+@media (max-width:1100px){
+  .layout{grid-template-columns:minmax(0,1fr);gap:8px}
+  .toc{position:static;max-height:none;border:1px solid var(--line);border-radius:14px;padding:14px 18px;background:var(--surface)}
+  .toc ol{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:0 18px}
+  .toc .part{grid-column:1 / -1}
+  main{max-width:none}
+}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);gap:28px;padding-block:28px 28px}}
+@media (max-width:640px){
+  body{font-size:16.5px}
+  .c3,.c2{grid-template-columns:minmax(0,1fr)}
+  .quad{grid-template-columns:minmax(0,1fr)}
+  .qh,.qr,.drift{display:none}
+  .cell .ax{display:block}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div>
+    <p class="kicker">一个议题的收束 · 2026 年 10 月</p>
+    <h1>分享让你获得更多</h1>
+    <p class="dek">为什么分享，为什么一流的认知传不出去，怎么分享，怎么知道自己不知道。两周的讨论整理成一页：每个问题先讲机制，再落到做法。</p>
+    <p class="thesis">分享是一台放大器。<b>账</b>决定传多远，<b>重建</b>决定长多深，<b>锚</b>决定放大的是真还是假。</p>
+  </div>
+  <figure class="sky">
+    <div class="seg" role="group" aria-label="同一片夜空的三种看法">
+      <button type="button" data-sky="naked" aria-pressed="false">他看到的</button>
+      <button type="button" data-sky="see" aria-pressed="false">你看到的</button>
+      <button type="button" data-sky="edge" aria-pressed="true">能分享的</button>
+    </div>
+    <svg id="sky" data-mode="edge" viewBox="0 0 600 420" role="img" aria-label="一片星空：北斗七星，以及从天璇经天枢延长到北极星的指极线"></svg>
+    <figcaption id="sky-cap">能分享的：从他已经认得的北斗出发，沿着勺口天璇到天枢的方向，延长大约五倍，就是北极星。分享的单位不是整张星图，而是从对方已有的一颗星出发的一条边。</figcaption>
+  </figure>
+</header>
+
+<div class="layout">
+  <nav class="toc" aria-label="目录">
+    <ol>
+      <li class="part">总览</li>
+      <li><a href="#s-map">三个生成器</a></li>
+      <li class="part">一 · 为什么分享</li>
+      <li><a href="#s-why">五层回报与一个凸性下注</a></li>
+      <li class="part">二 · 为什么传不出去</li>
+      <li><a href="#s-star">字都懂了，边没有</a></li>
+      <li><a href="#s-layers">观点的三层</a></li>
+      <li><a href="#s-lineage">传承传下去的是什么</a></li>
+      <li><a href="#s-well">井：学了也调不出来</a></li>
+      <li><a href="#s-out">出井：浸润、品味、量化</a></li>
+      <li class="part">三 · 怎么分享</li>
+      <li><a href="#s-axes">入口与去向</a></li>
+      <li><a href="#s-drift">网红为什么更容易火</a></li>
+      <li><a href="#s-how">四条做法</a></li>
+      <li><a href="#s-frame">接不住的时候</a></li>
+      <li class="part">四 · 知道自己不知道</li>
+      <li><a href="#s-line">一个问题暴露段位</a></li>
+      <li><a href="#s-bounds">有模型才有边界</a></li>
+      <li><a href="#s-invest">放到投资里</a></li>
+      <li><a href="#s-brain">同时持有两种观念</a></li>
+      <li class="part">五 · 终点</li>
+      <li><a href="#s-end">三轮体空</a></li>
+      <li><a href="#s-next">下一个议题</a></li>
+      <li><a href="#s-src">出处</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section class="sec" id="s-map">
+      <p class="eyebrow">总览</p>
+      <h2>所有讨论降下来，只剩三个生成器</h2>
+      <p>这个议题从“分享为什么让你获得更多”开始，一路问到为什么一流的认知传不出去、怎么分享、怎么知道自己不知道。十几个现象压下来，是三个互相独立的机制。</p>
+      <div class="cards c3">
+        <div class="card"><h3>重建</h3><p class="tag">决定长多深</p><p>认知搬不过去，只能由对方在自己的结构上，靠足够带宽的反馈长出来。文字是指针，共处是反馈，亲历是带代价的反馈。</p></div>
+        <div class="card"><h3>锚</h3><p class="tag">决定放大的是真还是假</p><p>每条反馈回路都锚在某处：要么是现实，要么是需要（掌声、确定感、自我一致）。锚在现实，反馈会纠正你；锚在需要，反馈只会安慰你。</p></div>
+        <div class="card"><h3>账</h3><p class="tag">决定传多远</p><p>人和人之间有一本可信度的账。它不会算数，却对钩子过敏；代价写入，多轮累积，会复利，但不遍历。</p></div>
+      </div>
+      <p>账和重建都只是放大器，只有锚决定正负。锚在现实，就是飞轮：可证伪的分享吸引同频的人，小圈子里反馈密，两边都长得更深。锚漂向需要，就是螺旋：掌声入账，悄悄改写锚，内容开始迎合，现实的反馈断开，你变成你的受众。</p>
+      <div class="tbl"><table>
+        <tr><th style="width:18%">关掉一个</th><th>世界会变成什么样</th></tr>
+        <tr><td>没有重建</td><td>读完书就拥有作者的判断。师承消失，一流知识可以标价出售。</td></tr>
+        <tr><td>没有账</td><td>每次交往都是一锤子买卖，好内容长不出合作，像景区门口的饭馆。</td></tr>
+        <tr><td>没有锚</td><td>信任极满，投入极深，人人扛得住打击，唯独没有一样是真的，像传销的晨会。</td></tr>
+      </table></div>
+      <p>由此还能推出一个清单之外的现象：<b>最拿得住的群体，未必最对。</b>高账、深重建，再加上锚在需要，现实的反证反而会让人抓得更紧。1956 年费斯廷格跟踪过一个预言末日的团体，预言落空那天，核心成员的信念更坚定了，还开始对外传教。扛住了多少回撤，证明不了信念是对的，要看它锚在什么上。</p>
+      <p class="take"><span>一句话</span>分享是一台放大器。账决定传多远，重建决定长多深，锚决定放大的是真还是假。</p>
+    </section>
+    <section class="sec" id="s-why">
+      <p class="eyebrow">一 · 为什么分享</p>
+      <h2>五层回报，和一个凸性下注</h2>
+      <p class="ask"><span>问</span>把知识、经验和认知向外释放，为什么反而可能让自己变得更强？</p>
+      <div class="tbl"><table>
+        <tr><th style="width:12%">层</th><th style="width:26%">你得到的</th><th>怎么发生</th></tr>
+        <tr><td>认知</td><td>外化、检验、纠错</td><td>想法留在脑子里很安全，没有边界，也证伪不了；写出来就变成可检验的命题，发出去就进入别人的批判。外化的东西还能反复调用，不必每次从零想起。</td></tr>
+        <tr><td>能力</td><td>反馈、实践、迭代</td><td>说出去的话是一个可追踪的承诺，人天生想避免前后不一致，于是倒逼执行。</td></tr>
+        <tr><td>社会</td><td>信号、声誉、弱连接</td><td>分享是向陌生人广播你是谁、你的思考质量如何。同频的人自己找上门，不同频的人自己走开。新信息和新机会主要来自弱连接，而弱连接只能靠广播建立。</td></tr>
+        <tr><td>合作</td><td>互惠、信任、资源互补</td><td>重复博弈里，先付出是对未来合作的期权。网络是正和的：分出去，你的并不会变少。</td></tr>
+        <tr><td>意义</td><td>利他、传承、共同成长</td><td>给别人提供坐标，让他看见自己也能做到；好的框架多年后被一个陌生人读到，长出更好的模型，再传下去。</td></tr>
+      </table></div>
+      <h3>每一层都有它的阴面</h3>
+      <ul class="pts">
+        <li><b>公开承诺是双刃的。</b>倒逼执行和锁住自我，是同一个机制（承诺一致性）。公开一个持仓论点，等于给自己加了一把卖不掉的锁。解法是公开论点时，同时公开它的证伪条件和退出条件：锁住的是“满足条件就认错”，而不是结论。</li>
+        <li><b>信号要贵才可信。</b>主动暴露自己的错误、给出可以被证伪的判断，这些都很难伪造，所以才建立得起信任。</li>
+        <li><b>互惠机制也会被用来操纵你。</b>人脑不擅长算数，一点小恩小惠就会让人由然感激。识别方法是看对方的“分享”背后，有没有附带一个你还没意识到的请求。</li>
+        <li><b>“说他人爱听的话”和“不违背自己的内心”是两套因果。</b>前者是迎合，目标是扩大接收面；后者是筛选，目标是提高共振的质量。要说对他人有用的话，而不是爱听的话。</li>
+      </ul>
+      <h3>分享是一个凸性下注</h3>
+      <p>分享的成本有界：时间、有人说你装、偶尔被骂、无人问津。收益却没有上限，而且滞后、呈幂律分布：大部分分享石沉大海，极少数会带来改变命运的连接。知识还有可组合性，很多投资洞见来自看似无关的跨界知识。这和小额、长期、高频下注，等待少数非线性回报，是同一个结构。</p>
+      <p>两个推论。第一，不要按单次回报评估分享，关键是持续在场。第二，声誉会复利，但不遍历，一次失信就可能归零，所以有两条硬约束：不说自己不信的话，不转发没有核实的事。</p>
+      <h3>标题本身藏着一个矛盾</h3>
+      <p>“分享让你获得更多”是工具性的说法。可如果以获得为目标去分享，回报反而会退化：对方一旦识别出钩子，就会宁可自己吃亏，也要让你拿不到。解法是分层：行为上可以是工具性的，动机越接近无所求，前四层的回报反而越高，因为“真的不图你什么”是最贵、最无法伪造的信号。这个悖论放到最后一节再收。</p>
+      <p class="take"><span>一句话</span>分享是一个成本有界、收益无上限的下注；它的回报只给不追逐它的人。</p>
+    </section>
+
+    <section class="sec" id="s-star">
+      <p class="eyebrow">二 · 为什么传不出去</p>
+      <h2>字都看懂了，边没有</h2>
+      <p class="ask"><span>问</span>对方所有的字都看懂了，却接受不了、吸收不了。像变魔术给他看，他一遍遍 get 不到；像每晚带他看同一片夜空，他一遍遍说“好漂亮”，就是看不见星座。</p>
+      <p>汪丁丁有一个观点：能和金钱、权力交换的知识必定是三流的；一流的知识只能免费，因为它只吸引少数能理解它的人，他们投入的理解力远远超过任何价格。这里面其实有两个不同的因果。</p>
+      <ul class="pts">
+        <li><b>供给端：交换会腐蚀表达。</b>买方付钱买的是对自己已有认知的确认，不会付钱让自己被推翻。关键不在收不收钱，而在谁控制表达。斯宾诺莎拒绝大学教席、靠磨镜片为生，守的就是这个；巴赫拿薪水写康塔塔却没被腐蚀，因为雇主管不到他写什么。把交换当成事先的目标，会腐蚀表达；事后才到来的回报，不会。</li>
+        <li><b>需求端：重建的成本高过任何价格。</b>文本只是指针，价值在接收者自己付出理解力、把它重建出来的过程。成本这么高，价格就可以忽略。这就是指月的手指。</li>
+      </ul>
+      <p>但这个命题容易被反过来用。“没人付费，所以我说的是一流”是逆推：免费是一流的必要条件，不是证明。没人理解你，可能是因为太深，也可能只是因为错了。区分的办法是看少数真正理解的人，有没有在批判你、推进你。</p>
+      <h3>重要性感受是结果，不是原因</h3>
+      <p>一个新信息让人觉得“重要”，是因为它同时连上了脑子里很多已有的节点。对方的字都懂了，但这些字在他那里是孤立的点，挂不到任何东西上，重要性感受根本生不出来。顺序是：<b>框架 → 连接 → 重要性感受</b>。</p>
+      <p>回到开头那片星空。对方不是没有感受，而是感受挂在了另一个层级：“好漂亮”附着在现象上，你的附着在结构上。更深的一层是，星座本身不在天上，是人投射上去的连线。所以你的框架对方“看不见”是必然的；你的星图也只是可能的星图之一。对方 get 不到时，偶尔值得反问一句：是他缺框架，还是我的连线方式本身有偏？</p>
+      <p>魔术的结构相同：观众得到了效果，得不到方法。区别只在魔术师刻意藏起方法，而你是想给却给不出去。</p>
+      <h3>高手为什么讲不清</h3>
+      <p>难不只在对方。蔡斯和西蒙的实验里，棋盘看几秒，象棋大师能复原大部分棋子，新手只记得住几个；可如果棋子是随机摆的，大师的优势几乎消失。大师记的是组块，不是棋子。高手眼里的一个块，在新手那里是四个球，而且已经压缩得解不回去了。斯坦福还有个“敲歌”实验：敲的人以为一半听众能猜出《生日快乐》这类歌，实际只有 2.5%。敲的人脑子里一直响着旋律，听的人只听见敲桌子。</p>
+      <h3>所以分享的单位是一条边</h3>
+      <p>教人认星座，没人一上来就画全天星图，都是先指北斗，再连一条线到北极星。教育心理学家奥苏伯尔说过：影响学习最重要的因素，是学习者已经知道什么。</p>
+      <p>至于对方接不住的郁闷，佛教有两个现成的答案。一是方便：对不同根器的人说不同的法，变的是接收端，法本身没变。二是佛度有缘人：有些人这一程就只看到“好漂亮”，那也是真实的，不必度到你的层级。</p>
+      <p class="take"><span>一句话</span>一流知识难以传递，是因为接收者缺少连接的结构：字懂了，边没有。分享的单位，是从对方已有节点出发的一条边。</p>
+    </section>
+    <section class="sec" id="s-layers">
+      <p class="eyebrow">二 · 为什么传不出去</p>
+      <h2>观点有三层，文字只带得走一层</h2>
+      <p class="ask"><span>问</span>为什么抄答案的人熬不过调整？是拿不走伴随观点形成的情绪记忆吗？观点能不能拆成审美品味、框架和情绪记忆？</p>
+      <p><b>抄来的答案没有更新规则。</b>结论是一个函数在某一点上的取值，抄的人拿走了 f(x₀)，没拿走 f。回撤时市场递来一个新的 x，他算不出 f(x₁)，分不清这次下跌是噪音还是信号。他唯一读得懂的证据只剩价格，于是默认成了趋势交易者：跌了，就是错了。还有一层选择效应：愿意抄答案的人，本来就是被“没耐心”筛出来的，而资本从没耐心的人流向有耐心的人。</p>
+      <div class="cards c3">
+        <div class="card"><h3>框架</h3><p class="tag">可以言传</p><p>概念、模型和推理路径。文字承载得了，但只有积木兼容的人接得住。</p></div>
+        <div class="card"><h3>品味</h3><p class="tag">只能身教</p><p>知道的比说得出的多。在许多都说得通的选项里，品味决定此刻哪个最要紧，要反复看你在具体案例里怎么取舍才传得过去。</p></div>
+        <div class="card"><h3>情绪记忆</h3><p class="tag">只能亲历</p><p>准确说，是观点的受击史：被自己、被别人、被价格反复打过，扛住了。抄的人拿到的是没挨过打的观点，第一次回撤对他是第一击，对你已经是第 n 击。</p></div>
+      </div>
+      <p>三者互相独立，可以各自单独缺失。照书套框架却选不中，是有框架没品味；老交易员闻得出、却讲不出也教不会，是有品味没框架；聪明的分析师在第一次真正的崩盘里投降，是两者都有，却没有情绪记忆。</p>
+      <p>它们也是三道门，次序固定：<b>品味决定看不看，框架决定看不看得懂，情绪决定用不用得上。</b>前两道门都不在分享者手里。用语言让人理解一个框架是可以的；真正像用语言教人骑自行车的，是把它用上。</p>
+      <h3>拿得住，还需要观点之外的一层</h3>
+      <p>用戒定慧来说最清楚：框架和品味是慧，受过击的情绪记忆是定，仓位和环境是戒。因戒生定，因定发慧。仓位超出承受力就没有戒，随之恐慌就没有定，框架再好也跑不起来。所以“吃透”既不充分（重仓加杠杆照样会被洗出去），也不严格必要（仓位小到无所谓的人也拿得住，只是那叫无所谓，不叫信念）。</p>
+      <h3>情绪记忆是双刃的</h3>
+      <p>亲手形成的观点自带承诺升级：斯陶的实验里，亲自做出初始决策的人，更容易继续追加投入。同一个变量，两个方向：抄的人死于波动，卖得太早；原创者死于执着，卖得太晚。原创者的解药是事先写下证伪条件：平静时立戒，不平静时执行。</p>
+      <details class="more"><summary>展开：脑区大致怎么对应</summary><div class="in">
+        <ul>
+          <li><b>框架</b>主要依赖外侧前额叶和工作记忆，是显性的、可以言说的部分。</li>
+          <li><b>品味</b>更接近价值判断，相关区域是眶额皮层和腹内侧前额叶，通过多巴胺的预测误差一点点被训练出来。</li>
+          <li><b>情绪记忆</b>主要涉及杏仁核、海马和脑岛。达马西奥说的躯体标记，正是经腹内侧前额叶进入决策的。</li>
+          <li><b>基底神经节</b>管的是习惯和程序性技能，是动作层面的“不用想”。急性压力下前额叶的功能会下降，控制权转向习惯系统，所以崩盘时还在运行的，只有反复演练过的东西。</li>
+        </ul>
+        <p>“先过感性这一关，理性才上场”大方向是对的：价值和显著性的打分先于深思熟虑，决定了什么能进入工作记忆。但两者不是严格的先后两段，而是并行、互相塑造的，理性也能长期反过来重塑感受。</p>
+      </div></details>
+      <p class="take"><span>一句话</span>框架可以言传，品味只能身教，情绪只能亲历；抄来的是 f(x₀)，不是 f。</p>
+    </section>
+
+    <section class="sec" id="s-lineage">
+      <p class="eyebrow">二 · 为什么传不出去</p>
+      <h2>传承传下去的，是更新规则</h2>
+      <p class="ask"><span>问</span>为什么很多运动员父母的观点和认知能传给子女？诺贝尔奖为什么基本上一个脉络？言传身教里，学到的是什么？是取舍的舍吗？</p>
+      <h3>先拆掉不是传承的部分</h3>
+      <p>运动员家庭里，相当一部分是基因加资源：身体、早接触、好教练、好场地。反证也很多，大量冠军的孩子并没有成材，这是回归均值。诺奖的脉络里，有一部分是双向选择加马太效应：社会学家朱克曼研究美国的诺奖得主，发现一半以上曾在更早的得主手下做学生或助手；但大师挑最有天分的学生，有天分的学生也会去找大师，这部分是筛选，不是传授。</p>
+      <h3>剥掉之后，真正传下去的四样东西</h3>
+      <div class="cards c2">
+        <div class="card"><h3>基线</h3><p class="tag">什么叫“正常”</p><p>冠军家里的正常训练量，是别人家的极限；顶级实验室里“还不够好”的标准，是别处的发表线。不是见过高山，而是住在山上。</p></div>
+        <div class="card"><h3>舍</h3><p class="tag">什么问题值得做</p><p>得主们说，从老师那里得到的主要不是知识，而是工作标准和品味。舍在文字里不可见：发表的都是选了什么，没选的只有坐在旁边才看得见。</p></div>
+        <div class="card"><h3>情绪参照</h3><p class="tag">这时候该怕吗</p><p>孩子遇到不确定的情况，会看父母的脸来决定怕不怕。导师面对失败的实验是什么表情，学生学到的就是这种情况该有什么情绪。</p></div>
+        <div class="card"><h3>反馈方式</h3><p class="tag">更新规则本身</p><p>输了球，一个孩子听到“下次加油”，另一个听到“原计划是什么？对手改了什么？下次只改一个变量”。传下去的不是 f(x₀)，而是修正 f 的程序。</p></div>
+      </div>
+      <h3>关于舍，再推三步</h3>
+      <ul class="pts">
+        <li><b>舍只在有代价时可见。</b>教育最有力的时刻，是孩子看到父母在真实的利益冲突里选了什么。没有代价的舍不算舍，所以假设性的教导传不了舍。</li>
+        <li><b>继承来的舍自带盲区。</b>因为不可见，它也最难被质疑：你从没看过那片负空间，就不会想到回去看。范式的转移常常要等一代人退场，原因就在这里。</li>
+        <li><b>舍也需要重开条件。</b>就像结论需要证伪条件，每一次“不碰这个方向”都应该附带理由；理由依赖的条件一变，就重新打开。舍也不是越多越好，过早放弃会限制探索。</li>
+      </ul>
+      <h3>落到分享上</h3>
+      <p>言传身教里起作用的是“身”：它提供了基线、负空间和情绪参照，外加一个反馈回路。文字能做的是尽量模拟：写出你否掉了什么，写出你当时的情绪反应，把广播换成有来回反馈的小圈子。还有一条：做坐标，不做神坛。班杜拉发现，替代经验的效果取决于榜样和自己像不像；看见一个起点和自己差不多的人走到了那里，才会觉得“我也能”，看见遥不可及的人，产生的是崇拜，而崇拜是另一种依赖。</p>
+      <p class="take"><span>一句话</span>传承的单位是更新规则，不是结论；舍只在有代价的时刻才看得见，而且要附带重开条件。</p>
+    </section>
+    <section class="sec" id="s-well">
+      <p class="eyebrow">二 · 为什么传不出去</p>
+      <h2>井：学了也调不出来</h2>
+      <p class="ask"><span>问</span>不在正确的框架里讨论问题，连错都算不上。对的动作往往反本能，打网球、游泳、拳击都是这样；本能就是井，所以学了知识也调不出来，要借情绪把它刻进第一反应。公园里下棋的老头一辈子努力，却一直按本能在下。</p>
+      <h3>框架是压缩过的反馈</h3>
+      <p>Not even wrong 原是物理学家泡利批评一篇论文的话：它根本没法被检验。不在框架里的人，他的判断没法被评为对或错。比如“这家公司一直在烧钱，所以不行”这句话不是错，而是问错了，该问的是这笔资本开支在竞争格局里买到了什么。</p>
+      <p>个人为什么很难自己摸出框架？人类学家亨里奇讲过亚马孙人处理苦木薯：刮皮、磨碎、冲洗，汁液煮沸，淀粉静置两天再烘烤，看上去大半是白费力气。可苦木薯含氰化物，省掉几步当场没事，慢性中毒要多年后才显现。这种东西靠个人试错学不会，只有一代代人的结果才筛得出来。框架的价值，在于它装着你一辈子都收集不到的反馈。</p>
+      <h3>正确为什么反本能：两套目标函数</h3>
+      <p>本能是为祖先环境优化的，目标是眼前的安全和跟着人群；专业动作是为这个领域的目标优化的。两者一分叉，对的就会感觉不对：游泳时本能抬头换气，下半身就沉下去；拳击时本能闭眼、扭头、直线后退，挨打反而更多；滑雪时本能往后坐，反而更失控；投资时本能跌了想卖，涨了想追。投资的反馈延迟，结果是概率，人群还会互相放大，几乎处在这条线的最远端。所以在这类领域里，体感不是证据：别扭不证明你做对了，顺手也证明不了。</p>
+      <h3>井不是距离，是吸引子</h3>
+      <p>井不是一段空的距离，而是一个坑：它有自己的深度，还会把人吸回去。心理学家扎荣茨发现，压力和旁观者会放大“优势反应”，也就是练得最多的那个反应。练熟的动作在压力下发挥得更好，新学的动作在压力下最先散架。就像河道：平时水可以引进新渠，洪水一来还是冲回老河床；要改道，新渠得挖得比老河床深。</p>
+      <p>这解释了两头。一开始就有教练的孩子井还浅，正确的那套直接成了第一条河床。公园下棋的老头，努力是真的，反馈也是真的，可他每下一盘都在把错的河床挖得更深，对手又都是同一水平的人。练习不会让人完美，只会让人定型。（对他也要公平一点：如果下棋图的是乐子和伴儿，拿大师的标准评他，本身也是 not even wrong。）</p>
+      <h3>怎么刻进去</h3>
+      <p>情绪负责标记“这个重要”，重复负责把它挖深，而且要在用得到它的状态下练：拳击要实战对练，飞行员要上模拟器。比“刻进第一反应”更准确的说法是心理表征：一个东西在脑中清晰、稳定的结构，可以训练，也可以检验。书法里的背临就是这样练的：合上字帖默写，逼你靠脑中的表征，而不是眼前的字帖。刻好之后反而不能再去想它：熟练的高尔夫球手一旦刻意盯着动作步骤，推杆反而变差。</p>
+      <h3>两处要防</h3>
+      <ul class="pts">
+        <li><b>情绪刻入不挑内容。</b>马克·吐温说，猫坐过一次烫炉盖，就再也不坐烫炉盖了，这很好；可它也再不坐凉炉盖了。一次惨痛的回撤，刻进去的可能是“好资产要拿住”，也可能是“永远别抄底”。顺序是先拿现实检验教训，再刻。</li>
+        <li><b>框架本身也可能是井。</b>一套正确的框架刻进去以后，就成了新的本能，也就成了新的井。这里的“正确”不是指真，而是指被现实选出来、在这个领域的目标上更管用。玄学和占星也是前人一代代传下来的框架，只是选出它们的是人的需要，不是现实。</li>
+      </ul>
+      <blockquote class="classic">井蛙不可以语于海者，拘于虚也；夏虫不可以语于冰者，笃于时也；曲士不可以语于道者，束于教也。<cite>《庄子·秋水》。前两口井是空间和时间，第三口最隐蔽：被所学的东西困住。</cite></blockquote>
+      <h3>怎么知道自己在井里</h3>
+      <p>井的麻烦在于从里面看不见井。三个信号：努力多年，结果不再进步；高手的选择在你看来莫名其妙，甚至像是错的（多半说明你们不在一个空间）；你的反馈只来自和你同一水平的人。</p>
+      <p>《秋水》里河伯顺流而下，亲眼看见大海，望洋兴叹。北海若这才对他说：“今尔出于崖涘，观于大海，乃知尔丑，尔将可与语大理矣。”出井的第一步是一种情绪：看见自己的小。</p>
+      <p class="take"><span>一句话</span>重建的难度取决于三件事：距离、旧井的深度和反馈带宽。孩子离得远但井浅，所以学得快；公园的老头离得远、井又深，所以最难。</p>
+    </section>
+
+    <section class="sec" id="s-out">
+      <p class="eyebrow">二 · 为什么传不出去</p>
+      <h2>出井：浸润、品味、量化</h2>
+      <p class="ask"><span>问</span>把自己长期浸润在对的空间、对的事物、对的人中间，养出看问题的正确角度，也就是品味；再沿着它去优化、去量化，才有迭代进步的空间。问题本身没想清楚，就是在错误的地方用力。</p>
+      <figure class="fig">
+        <div class="flow" aria-label="浸润、品味、量化、结果的回路">
+          <span class="n">浸润</span><span class="ar">→</span>
+          <span class="n"><b>品味</b>　选空间</span><span class="ar">→</span>
+          <span class="n"><b>量化</b>　在空间里逼近</span><span class="ar">→</span>
+          <span class="n">结果</span>
+          <span class="back">↺ 结果再回头校准品味。没有这条回来的箭头，品味会退化成一口更舒服的井。</span>
+        </div>
+        <figcaption>品味的本质，是第一反应的问题空间：下意识先问什么、先看什么、先舍什么。</figcaption>
+      </figure>
+      <p><b>品味和量化是两种工作，次序不能反。</b>品味负责“问什么”，量化负责“答得多好”。先量化再找方向，就好比拿一把很精密的尺子，去量一个不该量的东西。投资里很常见：模型做得极细，算出来的却是一个问错了的问题。方向对了，每一轮量化都是在逼近；方向错了，量化越精确，错得越精确。</p>
+      <h3>同一个回路的另一种说法：抽象度和分辨率</h3>
+      <p>群里有过一个说法：抽象度和分辨率可以构成一个飞轮。抽象度是在认识层面构建系统的运作逻辑，弱点是不解决实际问题，卡点发现不了，这是投资者和战略家常犯的毛病；分辨率提高的是具体操作的逻辑，弱点是容易过度优化、看不见方向，这是企业家常犯的毛病。对应过来，抽象度大致是品味加框架，分辨率大致是量化加实操。</p>
+      <p>它为什么是飞轮？靠预测误差：抽象度对具体情况做出预测，实操碰到的卡点就是预测失败的地方，误差回头修正抽象，修正后的抽象又告诉你下一步该看哪里。这和波普尔的猜想与反驳、科尔布的经验学习圈是同一个结构。人和人的差别不在有没有这个回路，而在三件事：转多快、锚在哪、能不能迁移。</p>
+      <ul class="pts">
+        <li><b>飞轮没有方向感，要靠锚。</b>网红也有一个转得飞快的飞轮：对粉丝反应的分辨率极高，也看透了人对确定性的渴求，可它锚在需要上。分辨率必须是对现实的分辨率，不是对掌声的分辨率。转速越快，锚错的飞轮越危险。</li>
+        <li><b>抽象度能迁移，分辨率不能。</b>投资者和战略家的工作本来就跨领域，于是把抽象带进自己没付过分辨率的领域，结论很笃定，却连错都算不上。投资者的分辨率只能借，或者自己造：去问经营者，写证伪条件，用小仓位肉身入世。不可逆的教训（比如破产）只能从别人的案例里借，因为亲历的代价就是出局；可以恢复的教训，必须自己去拿。</li>
+      </ul>
+      <details class="more"><summary>展开：马斯克的五步工程法，正是这个飞轮的操作手册</summary><div class="in">
+        <p>按艾萨克森的传记，马斯克对每一步都附了警告：</p>
+        <ul>
+          <li><b>质疑需求</b>：先检查问题空间对不对，也就是 not even wrong 那一关。最危险的需求来自聪明人，因为没人敢质疑。</li>
+          <li><b>删除</b>：就是舍。删掉的东西最后如果加回来不到 10%，说明删得不够。这是把“舍的重开条件”变成了一个可校准的数字。</li>
+          <li><b>简化</b>：压缩，也就是抽象。聪明工程师最常犯的错，是去优化一个本不该存在的东西。</li>
+          <li><b>加速</b>：缩短反馈周期，让飞轮转得更快。</li>
+          <li><b>自动化</b>：组织层面的“刻进第一反应”。他承认工厂里一上来就想把每一步自动化是大错，这是马克·吐温那只猫的工厂版：没检验就刻，刻进去的就是错的。</li>
+        </ul>
+        <p>次序本身就是方法：先方向，后精度；先检验，后固化。</p>
+      </div></details>
+      <details class="more"><summary>展开：《精进2》里说得更好的四处</summary><div class="in">
+        <ul>
+          <li><b>中间层。</b>两极之间最容易被忽略、也最值钱的是中间层：树根是理论，树叶是现象，树干和枝杈把两者连起来。中间层里最该先拿下的是高频模块，比如大厨的酱汁、英语的句型。五步法本身就是一锅能用在很多道菜里的酱汁。</li>
+          <li><b>计量单位框定了分辨率。</b>潮汕牛肉只该涮几秒，按分钟去想，从单位上就偏了。曼德博罗的海岸线也一样：尺子越短，量出来越长。看季度还是看十年，就是在选尺子，而这把尺子通常是不知不觉继承来的。</li>
+          <li><b>作茧、蜕化、破茧。</b>书法家费新我说先专临一家，再广博，最后脱化出自己的面目；汪曾祺说摹仿、摆脱、自成一家。被一家框住不是失败，是必经的阶段；真正的失败是跳过这一步，或者一直出不来。</li>
+          <li><b>教育是做产品吗？</b>可以借产品的用户研究，不能借产品的目标函数。产品要你一直需要它，教育要孩子最终不再需要你。这是园丁和木匠的区别。</li>
+        </ul>
+      </div></details>
+      <p class="take"><span>一句话</span>浸润长出品味，品味选对问题，量化逼近答案，结果再回头校准品味。问题选错了，努力只是在挖井。</p>
+    </section>
+    <section class="sec" id="s-axes">
+      <p class="eyebrow">三 · 怎么分享</p>
+      <h2>入口跟着对方，去向不让步</h2>
+      <p class="ask"><span>问</span>“以自我为中心的分享”和“以受众为中心的分享”，到底该站哪一边？</p>
+      <p>两边都对一半，因为这里其实有两根轴。<b>入口</b>：从谁的已知开始讲，用你的术语和前提，还是用对方的问题、对方熟悉的例子。<b>去向</b>：讲完把人带到哪里，带到你真实的判断，还是带回对方本来就想听的结论。</p>
+      <figure class="fig">
+        <div class="quad" role="group" aria-label="入口与去向四格，点一格看解释">
+          <div class="qh"></div>
+          <div class="qh">入口：从我的已知出发</div>
+          <div class="qh">入口：从对方的已知出发</div>
+          <div class="qr">去向：<br>真实判断</div>
+          <button type="button" class="cell" data-k="out" aria-pressed="false"><span class="ax">入口：我的已知 · 去向：真实判断</span><span class="nm">井外</span><span class="ds">自说自话，懂的人自然懂</span></button>
+          <button type="button" class="cell good" data-k="mouth" aria-pressed="true"><span class="ax">入口：对方的已知 · 去向：真实判断</span><span class="nm">井口</span><span class="ds">脚手架：从北斗连到北极星</span></button>
+          <div class="qr"></div>
+          <div class="drift">↓　漂移的方向：入口不变，去向先变　↓</div>
+          <div class="qr">去向：<br>对方想听的</div>
+          <button type="button" class="cell" data-k="cloak" aria-pressed="false"><span class="ax">入口：我的已知 · 去向：对方想听的</span><span class="nm">披着一流外衣的井中</span><span class="ds">用你的框架，论证群体已有的共识</span></button>
+          <button type="button" class="cell bad" data-k="inn" aria-pressed="false"><span class="ax">入口：对方的已知 · 去向：对方想听的</span><span class="nm">井中</span><span class="ds">迎合：说他想听的</span></button>
+        </div>
+        <div class="qd" id="quad-detail" aria-live="polite"><h3>井口：脚手架</h3><p>入口从对方的已知出发，去向仍是你的真实判断：先指北斗，再连北极星。入口可以随对方自由调整，这是方便；去向一步都不让。好的脚手架会让入口逐渐后移：对方在长，你就能从越来越靠近你原点的地方讲起。</p><p class="chk"><b>自检</b>一年以后，你还得从同一个入口讲起吗？如果是，要么对方没有动，要么你其实已经在井中了。</p></div>
+        <figcaption>点一格，看它的意思和自检的问题。</figcaption>
+      </figure>
+      <h3>两根轴推出来的几件事</h3>
+      <ul class="pts">
+        <li><b>入口决定对方接不接得住，去向决定这次分享诚不诚实。</b>所以“必须从对方的问题出发”和“服从受众就会走样”两句都对，只是各管一根轴。交换让表达走样，准确地说是把去向拉偏了，而不是入口。</li>
+        <li><b>格子会漂移，而且方向固定。</b>井口会滑向井中：入口已经贴着对方，掌声又持续奖励“说他想听的”，去向一点点被拉回去。井外会滑向披着外衣的井中：入口始终是自己的语言，所以一直觉得自己很真诚，变的只有去向。两条路径的共同点是入口不变、去向先变，所以自我监测只需盯住去向。</li>
+        <li><b>筏喻可以观察。</b>《金刚经》说“法尚应舍”，脚手架是要拆的。好的分享让受众越来越不需要你，迎合让受众越来越需要你，而依赖就是复购。</li>
+        <li><b>去向的诚实，也包括说出你否掉了什么。</b>只给结论不给舍，去向是对的，对方拿到的仍是一张山顶照片。</li>
+        <li><b>情商有两种。</b>一种是让人舒服，一种是准确理解人。在对方的井口推演，前提是准确建模对方的结构；最好的分享者第二种极高，并且拒绝把它用在第一种上。</li>
+      </ul>
+      <h3>用一个段子来看：质疑、理解、成为</h3>
+      <p>段子是这样的：长辈们爱转发某位老师的视频，满是正能量，越说越离谱，甚至说亚里士多德可能不存在。你在家宴上跟二舅争，二舅发了火。你慢慢意识到，不是这位老师改变了二舅，而是二舅需要他。后来你想通了，何必较劲，于是也夸他、转发他，还把学说发扬光大：古希腊有没有文明都不好说。你成了最受长辈欢迎的年轻人。</p>
+      <ul class="pts">
+        <li><b>质疑，是井外。</b>入口是史实和常识，去向是真实判断，结果是吵架。</li>
+        <li><b>理解，是诊断对了。</b>段子里的这位老师本身在“披着一流外衣的井中”：入口是学者的身份和腔调，去向是观众想听的。</li>
+        <li><b>成为，是井中，而且越过了井中。</b>“古希腊有没有文明都不好说”让去向主动后退，比那位老师走得还远。</li>
+      </ul>
+      <p>荒诞感来自中间缺了一格：主角以为只有对抗和投降两个选项，从井外直接跳进井中，没看见井口。二舅的井不是由知识缺口构成的，而是由情绪需要构成的：民族自豪、被尊重、晚年的确定感。“亚里士多德当然存在”攻击的不是他的知识，是他的需要。认知科学里叫身份保护性认知：威胁到身份的事实会被当作攻击来防御，越聪明的人防得越好。</p>
+      <p>井口在这里长什么样？入口从他的需要出发，他要的是自豪；去向不必一步到位，只要不后退，往真实挪一小步就行。比如：中国真实的成就本身就足够让人自豪，用不着靠否认别人来撑。</p>
+      <p>最要紧的一条线是：不较劲不等于发扬光大。不较劲是去向停在原地，家宴上的目的本来就是关系而不是纠错，选择不争完全正当；跟着夸、加码，是去向在倒退，你在亲口说自己不信的话。一旦开始这样做，“说久了自己都信了”就开始运转。很多分享者被受众俘获，走的也是这条路：质疑受众，理解受众，成为受众。</p>
+      <p class="take"><span>一句话</span>面对由情绪需要构成的井，入口要从需要出发，去向至少不能后退。沉默不是迎合，说假才是；不争可以，加码才是投降。</p>
+    </section>
+
+    <section class="sec" id="s-drift">
+      <p class="eyebrow">三 · 怎么分享</p>
+      <h2>网红为什么更容易火</h2>
+      <p class="ask"><span>问</span>能经常给出确定结论的人，为什么更受欢迎？他们一直说错，为什么大家依然觉得他们很牛？</p>
+      <div class="cards c3">
+        <div class="card need"><h3>只高一层</h3><p class="tag">最容易被接住</p><p>高一层，对方只差一两个关键点，一点破就能自己重建，于是恍然大悟；高两层就显得神神道道。传播的赛场筛选的是“高一层”，不管内容对不对。</p></div>
+        <div class="card need"><h3>自洽不等于正确</h3><p class="tag">分辨率太低</p><p>自洽是内部不打架，正确要靠和现实接触，而且要跨过不同的周期。井内自洽没有用，一个只在一个周期里拟合过的模型最有说服力，也最危险。</p></div>
+        <div class="card need"><h3>局部地图当全图</h3><p class="tag">幸存者与遍历性</p><p>“封神”本身是按结果挑出来的：当年加杠杆的人成千上万，赢的成了神，输的没有声音。重复下注时，哪怕真有优势，一直梭哈下去，出局的概率也会趋近于一。</p></div>
+      </div>
+      <p><b>“恍然大悟”本身也会骗人。</b>劳克宁等人 2020 年的实验发现，顿悟感会被大脑当成“这是真的”的信号：人带着“啊哈”解开一句话里嵌着的字谜后，会觉得这句话更可能是真的，哪怕顿悟和它真不真毫无关系。听众得到的“帮助”是一种感觉，不是一种能力。</p>
+      <p><b>网红和好老师，每一步都只高一层。</b>区别在于后面还有没有下一步。网红的地图比受众高一层就到头了，只能把同一级台阶反复包装着卖；脚手架是一串“高一层”，通向一个很远的目的地。</p>
+      <p><b>真不真信，不是关键变量。</b>注意力市场筛选的是高一层、笃定、简单的内容。一个真信的人只要正好符合这个标准，不用说一句谎话就会被放大；他的锚是被筛选和销售漏斗定下的，不是被本意定下的。对追随者来说，结局一样。</p>
+      <p>一个典型的轨迹：一位房产作者在一段单边上涨的楼市里，凭“杠杆加房产”这张地图赢得极其漂亮，于是地图被当成了全图；策略没变，周期变了，杠杆把地图的错误变成了出局。“梭哈是一种智慧”这句口号也一样，它没有任何适用条件。</p>
+      <h3>重仓不是梭哈：亢龙有悔</h3>
+      <p>重仓是对有效的机会集中下注，梭哈是赌上身家，区别在于你还有没有选择权。按凯利公式，只有在不可能输的时候，最优的下注比例才是全部本金。</p>
+      <blockquote class="classic">亢之为言也，知进而不知退，知存而不知亡，知得而不知丧。<cite>《周易·乾·文言》。象传说得更短：“亢龙有悔，盈不可久也。”</cite></blockquote>
+      <p>金庸写这一掌，说精要不在“亢”而在“悔”：力道打出去十分，留在身上的还有二十分。那二十分不是存着没用的力气，而是选择权：对后果有准备，一掌打完不会力竭，还能接着应变。用戒定慧说，那二十分就是戒。</p>
+      <p class="take"><span>一句话</span>网红火，是因为只高一层、给确定感；最危险的是自己：说久了自己都信了，你变成了你的受众。</p>
+    </section>
+    <section class="sec" id="s-how">
+      <p class="eyebrow">三 · 怎么分享</p>
+      <h2>四条做法</h2>
+      <p class="ask"><span>问</span>别人想拉你出井，只能从你的问题出发，一级一级引；可分享者通常只有一段视频、一篇文字，根本没有反馈环节。一对一的帝师太难得，学生也不是不聪明，只是接不住对面同时飞来的四个乒乓球。那分享到底能做什么？</p>
+      <p>“四个乒乓球”比想象的更准：工作记忆一次大约只能处理四个左右的组块。所以好的反馈一次只给一个新块，而且挂在对方已经熟练的块上。一对一也有硬证据：布鲁姆 1984 年的研究发现，接受一对一辅导的学生，平均成绩超过课堂教学组 98% 的人。教育学里的“脚手架”一词，正是用来描述这种辅导的。</p>
+      <ol class="pts">
+        <li><b>入口从对方的问题出发，一次只高一层；去向不让步。</b>好导师不只知道答案，还知道对方站在哪、还差几步、下一步往哪走。</li>
+        <li><b>分享过程、取舍和受击史，而不是结论。</b>漫画家荒木飞吕彦说，画火其实是在画风，画水其实是在画重力：看不见的东西，只能通过它推动的可见之物来表达。品味看不见，就画它推着你做出的取舍：看了哪几个方向，否掉了哪个，为什么；情绪看不见，就写那次差点下车的具体情境。结论是山顶的照片，取舍才是对方下次自己选路时用得上的东西。</li>
+        <li><b>分享框架，不分享仓位。</b>框架和方法是非竞争性的，分享出去你不会损失什么；一个具体的定价错误却是竞争性的，而且有容量。抄的人虽然拿不稳，却足以在你建仓时把价格抬上去，所以仓位和时点建完仓再说。公开论点时，把证伪条件一起公开。</li>
+        <li><b>没有一对一时，给对方能自己对照、自己纠错的材料。</b>《精进2》里有一条路叫范例循环：挑大师的作品做范例，先吸收，再自己做一个仿作，然后拿仿作和范例对比，差距本身就是反馈。王云五把英文范文译成中文，隔一周再译回英文，逐句对照原文。放到投资里就是判断的“回译”：读高手对一家公司的分析之前，先自己写一版判断，读完逐条对照，看漏了什么、错在哪里。分享者也可以这样设计：先给题目，再给推理。</li>
+      </ol>
+      <h3>广播和小圈子，分工不同</h3>
+      <p>读到这里容易得出“视频和文字没用”的结论，其实是分工不同。广播负责筛人、提供浸润的材料、照见自己；重建只发生在有来回反馈的地方，也就是一对一或小圈子。持续输出还有一层意义：同一个心智的多次输出，是同一个本体的多次投影，认真的读者可以从这些投影里反推出本体，就像连着读一个作者的全部作品，回头再读第一本，原来不懂的地方也通了。</p>
+      <h3>持续在场，然后放手</h3>
+      <p>浸润是以年计的，单次分享几乎没有作用，起作用的是长期稳定地出现在对方的信息环境里。至于对方出不出得了井，那是他自己的工作量证明。你能做的是让井口一直有光，拉不拉他上来，不在你的账上。</p>
+      <details class="more"><summary>展开：前行，是这个问题的完整传统解法</summary><div class="in">
+        <p>大圆满的前行要好几年：四转心法、念诵、磕大头，几乎占据一个人所有的时间和注意力。洗好了容器，才有足够的因缘接法。不收费，但是更贵。它一次解决了三个问题：</p>
+        <ul>
+          <li>四转心法先转心，解决的是“不愿意学”。不愿学往往不是懒：学会意味着先承认自己的小，这一步有情绪成本。</li>
+          <li>加行一层层打底，解决的是前置缺失，只是补的不是知识，而是容器本身。</li>
+          <li>几年的工作量证明，替稀缺的一对一做了筛选，正行留给洗好容器的人。</li>
+        </ul>
+        <p>这里有一个对称：分享者用昂贵的信号筛选受众，学习者用前行证明自己。双方都付了代价，这笔账才开得起来。</p>
+      </div></details>
+      <div class="tbl"><table>
+        <tr><th style="width:8%">#</th><th>边界清单</th></tr>
+        <tr><td>1</td><td>说对他人有用的话，不说让对方舒服的话。</td></tr>
+        <tr><td>2</td><td>不说自己不信的话，不转发没有核实的事。</td></tr>
+        <tr><td>3</td><td>依赖排他性、时效性或稀缺资源的优势，公开要谨慎。</td></tr>
+        <tr><td>4</td><td>公开宣布行动，借承诺倒逼执行；公开论点，同时公开证伪和退出条件。</td></tr>
+        <tr><td>5</td><td>不争可以，加码才是投降。</td></tr>
+        <tr><td>6</td><td>不是每个人都是分享的对象。</td></tr>
+      </table></div>
+      <p class="take"><span>一句话</span>分享传不了品味，只能提供浸润的材料和自己纠错的工具：分享爬山的过程而不是山顶的结论，带着受击史，做坐标而不是神坛，然后长期在场、不问结果。</p>
+    </section>
+
+    <section class="sec" id="s-frame">
+      <p class="eyebrow">三 · 怎么分享</p>
+      <h2>接不住的时候：框架的神话</h2>
+      <p class="ask"><span>问</span>很多时候分享无意义。物理学家、哲学家和仁波切，理解问题的概念体系完全不同，背景、角度、框架、约束和目的都不一样，把对方的判断在头脑中重建出来，成本远高于任何价格。</p>
+      <p>波普尔有一本文集叫《框架的神话》（1994）。他批判的“神话”是：讨论双方必须共享一套基本假设，理性而有成果的讨论才可能发生；框架不同，就只能各说各话。他不接受。跨框架的讨论确实困难，但这种困难不是不可逾越的，而且越困难，往往越有成果。</p>
+      <ul class="pts">
+        <li><b>讨论的价值不在达成一致。</b>一场没有结论的讨论，只要双方都比开始时多理解了一点，就是有成果的。衡量标准不是“对方被说服了没有”，而是“我学到了什么”。照这个标准，最难懂的那部分恰恰最值钱。</li>
+        <li><b>批判性思维是从框架的碰撞里长出来的。</b>他引过希罗多德的故事：大流士问希腊人，给多少钱愿意吃掉去世父亲的遗体，希腊人说给多少都不干；又问一个吃父亲遗体的部族，给多少钱愿意把父亲火化，那些人吓得大叫。当你发现自己的“理所当然”在别人眼里不可思议，才第一次看见自己的框架。</li>
+        <li><b>框架是牢笼，但可以越狱。</b>我们只是在比喻的意义上是框架的囚徒，愿意的话随时可以冲出去；出去以后又在一个框架里，但那会是一个更好、更宽敞的框架，而且还能再冲出去。这正是河伯出井：出去以后还是在井里，只是井更大了。</li>
+      </ul>
+      <p>差别在于衡量什么。“分享无意义”衡量的是传过去了没有；波普尔衡量的是自己有没有被改变。所以和物理学家、仁波切的对话，如果目的是让对方接住你，大概率无意义；如果目的是让对方的框架照出你的框架，它可能是最有意义的一种分享。最好的镜子，往往是离你最远的那个框架。从一个你认为大半在胡说的人身上也能学到东西，前提是研究的不是内容，而是现象：这东西为什么能传开，受众需要什么。</p>
+      <p class="take"><span>一句话</span>接不住，不等于没意义。这种时候不是让对方接住你，而是让对方的框架照出你的边界。</p>
+    </section>
+    <section class="sec" id="s-line">
+      <p class="eyebrow">四 · 知道自己不知道</p>
+      <h2>一个问题，就暴露了段位</h2>
+      <p class="ask"><span>问</span>一个人说三句话、问一个问题，有经验的人就知道他过没过线，这是为什么？一个人怎样才能知道自己的认知到了哪里，又怎样知道自己不知道什么？</p>
+      <p>问题是提问者脑中模型的投影。它暴露三样东西：你认为哪些变量重要（注意力），你把什么当成不确定的（边界），你在哪一层思考（抽象度和分辨率）。答案可以抄，问题抄不来，因为问题直接暴露了生成它的东西。</p>
+      <figure class="fig">
+        <div class="flow" aria-label="问题的三个层级">
+          <span class="n">找答案</span><span class="ar">→</span>
+          <span class="n">找机制</span><span class="ar">→</span>
+          <span class="n"><b>找机制的前提和边界</b></span>
+        </div>
+        <figcaption>金线大概落在问题从“答案是什么”转向“答案在哪里失效”的地方。</figcaption>
+      </figure>
+      <h3>“当你懂了，你就知道你懂了”只对过了线的人成立</h3>
+      <p>“懂了”的感觉，在线下是没有校准过的。认知科学里有个经典实验：人们先给自己对拉链、马桶、门锁原理的理解打分，都打得很高；等到被要求一步一步写出原理，分数就掉下来了。这叫解释深度错觉。所以段永平这句话描述的，是一个感觉已经被多年反馈校准过的人的体验；拿它当测试题给没过线的人用，恰好在最需要它的地方失灵。网上流传的“愚昧之巅”曲线并不在邓宁和克鲁格的原论文里，解释深度错觉要扎实得多。</p>
+      <p>“我看得懂的公司很少很少”，反而可能是好答案。巴菲特在 1996 年的信里说，能力圈的大小不重要，知道它的边界在哪里才是关键。前提是说得出其余那些为什么在圈外。</p>
+      <h3>不知道的边界，是从知道的一侧画出来的</h3>
+      <p>惊讶总是相对于一个模型而言的。没有模型的时候，一切同样模糊，没有哪件事显得特别；模型足够细，真正的异常才会跳出来。经营多年的老板，员工提出奇怪的要求，他多半知道背后的逻辑；突然有一个人做的事，动机完全无法理解，这时他大致知道自己不知道了。库恩在《科学革命的结构》里说过几乎一样的话：异常只有在范式提供的背景上才会显现，范式越精确、覆盖越广，对异常就越敏感。</p>
+      <figure class="fig">
+        <svg id="island" viewBox="0 0 600 300" role="img" aria-label="知识之岛：知道的范围越大、尺子越细，海岸线越长"></svg>
+        <div class="ctrls">
+          <label for="know">知道的范围</label><input type="range" id="know" min="1" max="4" step="1" value="3">
+          <label for="res">尺子的精度</label><input type="range" id="res" min="1" max="8" step="1" value="4">
+        </div>
+        <p class="readout" id="island-out" aria-live="polite">知道的面积 ×9　不知道的边界 ×3.4</p>
+        <figcaption>金色是知道的，轮廓线是知道和不知道的交界。岛越大，海岸线越长；尺子越细，量出来的海岸线也越长（曼德博罗）。知道得越多、分辨率越高，你看见的“不知道”就越多。</figcaption>
+      </figure>
+      <p>知道一件事由哪几个生成器、哪几条约束决定，剩下解释不了的部分，就是“不知道”。所以答案是有条件的：比如结论取决于三个条件，两个已经验证，另一个还没有证据。知道自己缺哪一块，也是一种能力。还要提防另一种不知道：知道得多，不等于知道边界，整个环境变了的时候，在原来的空间里继续优化本身就是错。</p>
+      <p>“不知道”还有两种。一种是还没知道，可以学；另一种是根本不可知，比如事前判断一个战略对不对、一笔投资对不对，理解得再深，也只能保留较宽的概率区间。知道哪些问题本来就没有答案，是更高一层的知。</p>
+      <h3>怎么分辨“通透”和“笃定”</h3>
+      <p>流畅和果断，正是网红能制造出来的东西。内容判断不了的时候，看这几个信号：</p>
+      <ul class="pts">
+        <li>不确定的地方，说得出为什么不确定。</li>
+        <li>答案是有条件的：“如果……就……，一旦……就不成立”，而不是一句口号。</li>
+        <li>先问你一个问题，判断你站在哪里，再回答。</li>
+        <li>主动说出自己的判断会怎么错。</li>
+      </ul>
+      <p>两处要防。金线不是一条，是一张地图：一个人可以在这个问题上过线，在隔壁问题上还在线下，因为分辨率不能迁移，所以更好的问法是“我在哪个问题上过线了”。另外，“一句话判断段位”本身也是一个模型，也会出错：来自另一套框架、但同样有效的问题，在你耳朵里可能显得很幼稚。一句话得出的判断，当成假设比当成结论安全。</p>
+      <details class="more"><summary>展开：自测的四个问题</summary><div class="in"><ul>
+        <li>我的判断要成立，需要哪几个条件？列不出来，就是没过线。</li>
+        <li>发生什么事，会让我完全解释不了？说得出来，说明我有边界。</li>
+        <li>能不能一步一步讲给外行听？讲不下去的地方，就是边界。</li>
+        <li>我过去说“八九成把握”的事，事后真有八九成兑现了吗？</li>
+      </ul></div></details>
+      <p class="take"><span>一句话</span>过了线的人，确定的地方很确定，不确定的地方说得出为什么不确定；没过线的人，要么处处确定，要么处处模糊。</p>
+    </section>
+
+    <section class="sec" id="s-bounds">
+      <p class="eyebrow">四 · 知道自己不知道</p>
+      <h2>有模型，才有边界</h2>
+      <p class="ask"><span>问</span>芒格说，要能比对手更好地反驳自己的观点，才配持有它；这是不是因为有模型才会有边界？一个理论越好越简洁，和世界的接口就越多，就越……什么？波普尔的可证伪和多伊奇的“难以改动”，又是什么关系？</p>
+      <h3>走到对岸</h3>
+      <p>芒格把这叫作自己的铁律：如果不能比支持对方观点的人更好地陈述反方的论证，就没有资格持有这个观点。要做到这一步，你必须有一个能同时容纳两边的模型，知道是哪些条件推出了对方的结论。于是你的观点自然变成有条件的：在这些条件下我成立，在那些条件下对方成立。对方开始赢的地方，就是你的边界。这是“从知道的一侧画出边界”的主动做法：故意走到对岸，在对方的边界和阴影里推演，回头看自己的边界在哪。</p>
+      <p>边界的确认有两个来源：逻辑上的，就是芒格的办法；经验上的，是现实让你吃了一惊。前者画出来的还只是假设，后者才算确认。一个好用的检验：如果你的惊讶总是落在自己事先标为“不确定”的地方，说明边界画对了；如果落在你以为最确定的地方，说明画错了。</p>
+      <p>这条铁律也会被糊弄，最常见的是在自己的框架里把对方讲成一个稻草人。两个更严格的检验：意识形态图灵测试（经济学家卡普兰）：你复述的对方观点，能不能让对方阵营的人分辨不出你是不是他们中的一员；拉波波特规则（哲学家丹尼特整理）：先把对方的立场讲到对方说“我自己都没讲得这么好”，再开始批评。</p>
+      <p>最难的部分不在智力。观点一旦和身份绑在一起，反驳自己就等于攻击自己，大脑会本能地保护它：把观念合理化，生气骂对方，或者装作没看见。所以这条铁律真正考验的，是你愿不愿意让自己的观点输掉。芒格说过，哪一年没有推翻一个自己最喜欢的想法，那一年可能就浪费了。闻过而喜。</p>
+      <h3>越简洁，越容易被证伪</h3>
+      <p>这是波普尔在《科学发现的逻辑》里的说法：理论越简洁，能推出的东西越多，经验内容越大；经验内容越大，禁止发生的事越多；禁止的事越多，和世界的接口越多，每个接口都是一个可能被现实打脸的地方。他还说，好的理论都是一种禁令，禁止得越多越好。边界，就是模型所禁止的那些事的轮廓。</p>
+      <p>“梭哈是一种智慧”什么都不禁止，所以没有边界，也无从确认，连错都算不上。“一切皆有深意”也是这样：能解释一切的，什么都没解释。同样是佛教，要分开看：作为修行方法的那部分（前行、三轮体空），可以在自己的经验里检验；转世这类形而上的断言，没法检验。</p>
+      <h3>可证伪问能不能被打中，难以改动问被打中之后能不能躲开</h3>
+      <p>多伊奇把重点推进到“好的解释”，标准是难以改动：每个细节都在承重，改动任何一处，解释就失效。他的例子是季节。古希腊人说季节来自女神德墨忒尔的情绪，她悲伤时就是冬天。这个说法可以检验，它预言南北半球同时进入冬天，现实恰好相反，所以被证伪了；可是改一下就能活，换成她高兴时是冬天，或者换一位神。地轴倾斜的解释则不同：倾角、公转、阳光入射角，每个细节都在承重，还顺带解释了南北半球季节相反，这是它原本没打算解释的东西，叫作延展性。</p>
+      <ul class="pts">
+        <li><b>可证伪性在实际中有难处。</b>一次检验检验的从来不只是理论本身，而是理论加一堆辅助假设，结果对不上时总可以怪到辅助假设头上（迪昂-蒯因问题）；概率判断也很难被证伪，说“七成会涨”结果跌了，不算证伪。</li>
+        <li><b>多伊奇不是推翻波普尔。</b>波普尔本来就有一条方法规则：不许用特设的辅助假设去挽救一个被驳倒的理论。多伊奇做的，是把这条规则升格成了“什么是好理论”的标准。</li>
+        <li><b>两者的根是同一个。</b>接口多，每个接口都在约束理论，理论就难以改动；难以改动，每个接口被打中才真正算数。可证伪性是这个结构露在外面的样子，难以改动是它内部的样子。降秩也是同一件事：逐个关掉一个生成器，看会不会有现象生成不出来，就是在主动制造难以改动的解释。</li>
+      </ul>
+      <p>要防的一点：难以改动不等于正确。牛顿力学非常难以改动，但在接近光速时是错的；正因为它难以改动，错在哪里才暴露得清清楚楚，也才换来了相对论。难以改动保证的是“错了能学到东西”，而不是“不会错”。自查时可以问三个问题：拿掉这个细节，解释还成立吗？换成另一个细节，还成立吗？遇到反例时想打的补丁，有没有独立的证据支持？</p>
+      <p class="take"><span>一句话</span>只有躲不开的理论，被打中才带来信息。走到对岸，是为了回头看清自己的边界。</p>
+    </section>
+    <section class="sec" id="s-invest">
+      <p class="eyebrow">四 · 知道自己不知道</p>
+      <h2>放到投资里：从知道它好，到知道价格错在哪</h2>
+      <p class="ask"><span>问</span>投资里怎么判断自己过没过线？</p>
+      <div class="tbl"><table>
+        <tr><th style="width:24%">台阶</th><th>要回答的</th></tr>
+        <tr><td>1 · 知道它好</td><td>叙事：行业为什么优秀，为什么增长，股价为什么涨。理解叙事是一切的开始，但停在这里就是抄答案。</td></tr>
+        <tr><td>2 · 知道它为什么好</td><td>机制：商业模式、单位经济和生态位的竞争优势；现金流和估值的关系；价值怎样产生，又怎样传到股东回报。</td></tr>
+        <tr><td>3 · 知道它会怎么错</td><td>证伪：哪些事实会推翻判断；哪些是短期噪音，哪些是约束和慢变量。</td></tr>
+        <tr><td>4 · 知道比价格多知道什么</td><td>概率：自己的概率判断，对比市场价格隐含的概率；再用长期记录和结果反馈，检验这个差是不是真的优势。这接近莫布森和拉帕波特说的“预期投资”。</td></tr>
+      </table></div>
+      <h3>好论点是一条因果链</h3>
+      <p>每一环都是必要的，证伪条件写在链条的环节上，而不是价格上。价格下跌不能证伪一个关于商业的解释，某一环断了才能。这也解释了为什么光写证伪条件还不够：如果论点本身容易改动，条件触发时你会重新解释，说“这次只是暂时的”；论点难以改动，证伪条件才真正有约束力。那位房产作者的理论就是典型的容易改动：房价跌了，可以说城市选错了、杠杆不够、政策干扰，它从来没有被证伪过，所以也从来没从中学到什么。</p>
+      <p>好的论点还会推出很多可观测的读数，每个读数都是一个接口。读数越多，论点越容易被证伪，挺过来以后也就越值得相信。最后一道工序：给每个重仓写出最强的空头论证，写到空头自己也认可，再看你的证伪条件是不是正好落在那条边界上。</p>
+      <h3>投资为什么特别难练</h3>
+      <p>心理学家霍格斯区分过两种学习环境：反馈快、规则稳的叫友善环境，比如书法、射箭；反馈慢、还会误导人的叫险恶环境，投资就是。在险恶环境里，光有操作序列只是抄来的 f(x₀)，所以要用替代反馈：证伪指标、同伴意见、市场结果。预先写下的证伪条件，就是投资里的说明书，而且自带更新规则。</p>
+      <p class="take"><span>一句话</span>证伪条件写在因果链的环节上，不写在价格上；写出连空头都认可的空头论证，才看得见自己的边界。</p>
+    </section>
+
+    <section class="sec" id="s-brain">
+      <p class="eyebrow">四 · 知道自己不知道</p>
+      <h2>同时持有两种观念</h2>
+      <p class="ask"><span>问</span>能不能在脑子里同时保持两种不同的观念，并且照常运行？说前额叶负责理性，是一个很低分辨率的说法：理性里不只有逻辑推理，还有行为抑制和冲突处理。冥想和逻辑训练练的显然不是同一个东西。大脑像一台不断预测的机器，前扣带皮层（ACC）感知预测偏差，在矛盾时用痛苦来报警。</p>
+      <div class="tbl"><table>
+        <tr><th style="width:26%">结构</th><th>大致在做什么</th></tr>
+        <tr><td>背侧 / 腹侧</td><td>背侧偏“冷认知”（推理、计算），腹侧偏“热认知”（价值、情绪）。</td></tr>
+        <tr><td>外侧 / 内侧</td><td>外侧偏对外部信息的操作，内侧偏对自身状态的监控。</td></tr>
+        <tr><td>前 / 后</td><td>越靠前，处理的东西越抽象、时间跨度越长。最前端的额极，核心功能之一是执行一个计划时，把另一个备选挂起而不丢掉。克什林团队 2014 年在《科学》上的研究发现，人大约能同时追踪两到三个备选策略，再多就不行了。</td></tr>
+        <tr><td>前扣带皮层</td><td>不只是报警器，它在算一笔账：现在值不值得调用控制力去处理这个冲突（“控制的期望价值”）。</td></tr>
+      </table></div>
+      <p>所以“同时持有两种观念”在神经上有对应的结构，而且容量很小。菲茨杰拉德说，一流智力的标志，是同时持有两种相反的观念，还能照常运作，说的就是这块能力。</p>
+      <p>难的不是持有，而是忍住警报。2009 年范维恩等人的实验里，被试做违心的事时，前扣带皮层越活跃，事后改变态度、让信念向行为靠拢的幅度就越大：大脑在用改观念的办法关掉警报。芒格也说过，人脑天生想尽快做出决定，以消除怀疑。</p>
+      <h3>“预测偏差解释所有情绪”，分辨率还可以再高</h3>
+      <ul class="pts">
+        <li><b>奖赏预测误差</b>：中脑多巴胺和纹状体，管“比预期好还是差”。</li>
+        <li><b>内感受预测误差</b>：脑岛，管“身体状态和预期是否一致”。巴雷特的情绪建构理论认为，情绪主要是大脑对身体信号的预测和解释。</li>
+        <li><b>冲突与控制</b>：前扣带皮层，管几个反应或几个信念是否打架、值不值得介入。</li>
+      </ul>
+      <p>三者都是预测误差，但计算的对象不同。只用一个框架解释所有情绪，又回到了低分辨率。</p>
+      <h3>自我、地图和疆域</h3>
+      <p>两种观念冲突时，警报响是正常的。如果观念只是地图，警报的意思是“值得去查一下”；如果观念和身份绑在一起，警报就变成了自我受威胁，大脑会用最快的办法关掉它：改观念、骂对方，或者装作没看见。所以要把自我和地图分开，也把地图和疆域分开：环境会变，地图不可能一直是对的。</p>
+      <p>逻辑训练主要练外侧的“操作”；冥想练的是内侧和脑岛这一路的“监控而不卷入”。唐一源、霍尔泽尔和波斯纳 2015 年的综述里，冥想影响最稳定的区域，正是前扣带皮层、脑岛和前额叶的内侧部分。它练的是一种能力：让警报一直来，允许它们存在，不急着关掉，也不仓促做决定，长期忍受悬而未决。</p>
+      <p class="take"><span>一句话</span>同时持有两种观念，难的不是装下它们，而是让警报响着，不急着关掉。</p>
+    </section>
+    <section class="sec" id="s-end">
+      <p class="eyebrow">五 · 终点</p>
+      <h2>三轮体空</h2>
+      <p class="ask"><span>问</span>以上都是工具性的分享，归根结底还是为了自己。佛家讲的分享是三轮体空：没有施者，没有受者，也没有所施之物；活在缘分中，而非关系里。</p>
+      <p>把三个生成器各自推到极限，恰好就是三轮体空。</p>
+      <div class="tbl"><table>
+        <tr><th style="width:22%">三轮</th><th style="width:14%">生成器</th><th>推到极限是什么</th></tr>
+        <tr><td>施者空</td><td>账</td><td>我这边不记账。动机越接近无所求，前面那些回报反而越高。</td></tr>
+        <tr><td>所施之物空</td><td>重建</td><td>路上本来没有东西在走：认知是对方在自己的结构上长出来的。</td></tr>
+        <tr><td>受者空</td><td>锚</td><td>没有一个需要维持的“我的受众”，锚只留在现实上。</td></tr>
+      </table></div>
+      <p>知识分享在佛教里对应的是法施。它和财施的区别正是这个议题的起点：财物分出去就少了，法分出去不会少。</p>
+      <p>锚要钉在不跟着你转的地方。射箭拉满弓时，弦靠在鼻尖，手贴在下巴，因为脸上的位置相对眼睛是固定的；脖子会转，脖子以下的部位不能当参照点。英文里这个位置正好叫 anchor point。掌声、粉丝、自己说过的话，都是脖子以下的参照点。好射手的目标不是偶尔射中十环，而是几乎每次都中：前者靠运气，后者靠一个稳定的系统。非中不可的执念，本身就是射箭的障碍。</p>
+      <p>所以不要按单次回报评估分享。保持持续在场：这是一个正期望的系统，也有利于整个系统的熵减，你也从这个更好的网络里获益。</p>
+      <p class="take"><span>一句话</span>追是追不到的。给足阳光、水和肥，让结果自然地成为。</p>
+    </section>
+
+    <section class="sec" id="s-next">
+      <p class="eyebrow">五 · 终点</p>
+      <h2>下一个议题：知道的东西，怎样在压力下也调得出来</h2>
+      <div class="cards c3">
+        <div class="card"><h3>品味怎么养</h3><p class="tag">看问题的层面</p><p>怎样在合适的层面和角度看问题，从复杂信息里抓出最关键的要素，在无数可能里快速排除 99.99% 的选项？</p></div>
+        <div class="card"><h3>知行合一</h3><p class="tag">从知道到做到</p><p>懂得那么多，却过不好这一生。面对真实的市场，哪些信息值得关注，该用哪个模型，知道和做到之间隔着什么？</p></div>
+        <div class="card"><h3>冥想与逻辑训练</h3><p class="tag">两种不同的训练</p><p>一个练推理，一个练和警报共处：允许冲突存在，长期忍受悬而未决。它们各自改变了什么？</p></div>
+      </div>
+      <p>三个问题共用一个底：知道的东西，怎样从一口旧井里出来，长成压力下也调得出来的心理表征。</p>
+    </section>
+
+    <section class="sec src" id="s-src">
+      <p class="eyebrow">出处</p>
+      <h2>文中提到的书和研究</h2>
+      <ol>
+        <li>Karl Popper, <i>The Myth of the Framework</i> (1994); <i>The Logic of Scientific Discovery</i>; <i>Conjectures and Refutations</i>.</li>
+        <li>David Deutsch, <i>The Beginning of Infinity</i> (2011), 第一章；另见 <a href="https://en.wikipedia.org/wiki/Explanatory_power" target="_blank" rel="noopener">Explanatory power</a>。</li>
+        <li>Thomas Kuhn, <i>The Structure of Scientific Revolutions</i> (1962).</li>
+        <li>Warren Buffett, 伯克希尔 1996 年致股东信（能力圈的边界）。</li>
+        <li>Leonid Rozenblit &amp; Frank Keil (2002), “The misunderstood limits of folk science: an illusion of explanatory depth,” <i>Cognitive Science</i>.</li>
+        <li>Ruben Laukkonen et al. (2020), <a href="https://labs.psych.ucsb.edu/schooler/jonathan/node/1871" target="_blank" rel="noopener">“The dark side of Eureka: Artificially induced Aha moments make facts feel true,”</a> <i>Cognition</i>.</li>
+        <li>William Chase &amp; Herbert Simon (1973), “Perception in chess”；Elizabeth Newton (1990), 斯坦福“敲歌”实验。</li>
+        <li>Benjamin Bloom (1984), “The 2 Sigma Problem”；David Wood, Jerome Bruner &amp; Gail Ross (1976), “The role of tutoring in problem solving”；Nelson Cowan (2001), 工作记忆约四个组块。</li>
+        <li>Harriet Zuckerman, <i>Scientific Elite</i> (1977)；Albert Bandura 的自我效能研究。</li>
+        <li>Joseph Henrich, <i>The Secret of Our Success</i> (2015)；Robert Zajonc (1965), 社会助长与优势反应；Sian Beilock, <i>Choke</i> (2010)。</li>
+        <li>Anders Ericsson &amp; Robert Pool, <i>Peak</i> (2016)；Robin Hogarth, <i>Educating Intuition</i> (2001)；采铜《精进2》(2019)。</li>
+        <li>Leon Festinger et al., <i>When Prophecy Fails</i> (1956)；Barry Staw (1976), 承诺升级；Dan Kahan, 身份保护性认知。</li>
+        <li>Bryan Caplan, 意识形态图灵测试；Daniel Dennett, <i>Intuition Pumps</i> (2013), 拉波波特规则。</li>
+        <li>Maël Donoso, Anne Collins &amp; Etienne Koechlin (2014), “Foundations of human reasoning in the prefrontal cortex,” <i>Science</i>；Amitai Shenhav, Matthew Botvinick &amp; Jonathan Cohen (2013), “The expected value of control,” <i>Neuron</i>；Vincent van Veen et al. (2009), <i>Nature Neuroscience</i>。</li>
+        <li>Yi-Yuan Tang, Britta Hölzel &amp; Michael Posner (2015), “The neuroscience of mindfulness meditation,” <i>Nature Reviews Neuroscience</i>；Lisa Feldman Barrett, <i>How Emotions Are Made</i> (2017)。</li>
+        <li>Walter Isaacson, <i>Elon Musk</i> (2023)；Michael Mauboussin &amp; Alfred Rappaport, <i>Expectations Investing</i>；Alison Gopnik, <i>The Gardener and the Carpenter</i> (2016)。</li>
+        <li>《庄子·秋水》；《周易·乾》象传与文言传；《金刚经》筏喻。</li>
+      </ol>
+    </section>
+  </main>
+</div>
+
+<p class="foot">整理自 2026 年 10 月的一组讨论。人名和群聊原文都没有放进来，例子只保留机制。</p>
+
+<script>
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+
+  /* 星空 */
+  var sky=document.getElementById('sky');
+  if(sky){
+    var seed=20261023;
+    function rnd(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;}
+    var g=el('g',{});
+    for(var i=0;i<170;i++){var r=rnd();g.appendChild(el('circle',{cx:(rnd()*600).toFixed(1),cy:(rnd()*420).toFixed(1),r:(0.4+r*r*1.5).toFixed(2),'class':'bg-star',opacity:(0.25+rnd()*0.6).toFixed(2)}));}
+    sky.appendChild(g);
+    sky.appendChild(el('path',{d:'M96 306 L170 284 L238 296 L318 308 L420 302 L412 352 L318 360 L318 308','class':'dip'}));
+    sky.appendChild(el('line',{x1:412,y1:352,x2:460,y2:52,'class':'ptr'}));
+    var S=[[420,302,'天枢',1],[412,352,'天璇',1],[318,360,'天玑',0],[318,308,'天权',0],[238,296,'玉衡',0],[170,284,'开阳',0],[96,306,'摇光',0],[460,52,'北极星',1]];
+    S.forEach(function(s){
+      sky.appendChild(el('circle',{cx:s[0],cy:s[1],r:s[2]==='北极星'?3.8:3,'class':'named'}));
+      var t=el('text',{x:s[0]+9,y:s[1]-9,'class':s[3]?'lbl key':'lbl'});t.textContent=s[2];sky.appendChild(t);
+    });
+    var pl=el('text',{x:450,y:200,'class':'ptr-lbl'});pl.textContent='延长约 5 倍';sky.appendChild(pl);
+    var caps={
+      naked:'他看到的：亮、多、美。“好漂亮”是真实的感受，只是挂在现象这一层。同一份数据，他投射的是另一个层级。',
+      see:'你看到的：星座。可星座本身不在天上，是人投射上去的连线。中国人连成三垣二十八宿，希腊人连成 88 个星座，两套都自洽，也都能导航。',
+      edge:'能分享的：从他已经认得的北斗出发，沿着勺口天璇到天枢的方向，延长大约五倍，就是北极星。分享的单位不是整张星图，而是从对方已有的一颗星出发的一条边。'
+    };
+    var cap=document.getElementById('sky-cap');
+    var btns=document.querySelectorAll('[data-sky]');
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      var m=b.getAttribute('data-sky');sky.setAttribute('data-mode',m);
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      if(cap)cap.textContent=caps[m];
+    });});
+  }
+
+  /* 入口与去向 */
+  var Q={
+    out:{t:'井外：自说自话',p:'入口是你的已知，去向是你的真实判断。东西是对的，但对方看到的只是原样的星空，只会说“好漂亮”。段子里的“质疑”就在这一格：入口是史实和常识，结果是吵架。',c:'对方能不能用自己的话复述你的第一步？复述不出来，说明入口离他太远，你还在井外。'},
+    mouth:{t:'井口：脚手架',p:'入口从对方的已知出发，去向仍是你的真实判断：先指北斗，再连北极星。入口可以随对方自由调整，这是方便；去向一步都不让。好的脚手架会让入口逐渐后移：对方在长，你就能从越来越靠近你原点的地方讲起。',c:'一年以后，你还得从同一个入口讲起吗？如果是，要么对方没有动，要么你其实已经在井中了。'},
+    cloak:{t:'披着一流外衣的井中',p:'用的是你自己的框架和术语，去向却是群体已有的共识。语言是自己的，所以它能通过“不违背内心”的自检，这正是“说久了自己都信了”发生的地方。段子里的那位老师就在这一格：入口是学者的身份和腔调，去向是观众想听的。',c:'上一次分享受众不想听的判断，是什么时候？'},
+    inn:{t:'井中：迎合',p:'入口和去向都交给对方：用他熟悉的话，说他想听的结论。迎合让受众越来越需要你，而依赖就是复购，这正是流量变现想要的。好的分享正相反，让人越来越不需要你。',c:'讲完以后，对方相信的东西有没有离他原来的位置更远？全场鼓掌、没人被挑战，先查去向。'}
+  };
+  var qd=document.getElementById('quad-detail');
+  var cells=document.querySelectorAll('.cell[data-k]');
+  function showQ(k){var d=Q[k];if(!d||!qd)return;
+    qd.innerHTML='<h3>'+d.t+'</h3><p>'+d.p+'</p><p class="chk"><b>自检</b>'+d.c+'</p>';
+    cells.forEach(function(c){c.setAttribute('aria-pressed',c.getAttribute('data-k')===k?'true':'false');});}
+  cells.forEach(function(c){c.addEventListener('click',function(){showQ(c.getAttribute('data-k'));});});
+
+  /* 知识之岛 */
+  var isl=document.getElementById('island'),kn=document.getElementById('know'),rs=document.getElementById('res'),out=document.getElementById('island-out');
+  if(isl&&kn&&rs&&out){
+    isl.appendChild(el('rect',{x:0,y:0,width:600,height:300,'class':'sea'}));
+    var land=el('path',{'class':'land'});isl.appendChild(land);
+    var H=[[3,.07,.4],[5,.05,1.3],[8,.04,2.1],[13,.03,.7],[21,.022,2.8],[34,.016,1.9],[55,.011,.2],[89,.008,2.4]];
+    function shape(k,n){var R=24*k,pts=[],L=0,px=0,py=0;
+      for(var i=0;i<=1440;i++){var a=i/1440*Math.PI*2,f=1;for(var j=0;j<n;j++)f+=H[j][1]*Math.sin(H[j][0]*a+H[j][2]);
+        var x=300+R*f*Math.cos(a)*1.9,y=150+R*f*Math.sin(a);if(i)L+=Math.hypot(x-px,y-py);px=x;py=y;pts.push(x.toFixed(1)+' '+y.toFixed(1));}
+      return{d:'M'+pts.join(' L')+'Z',L:L};}
+    var L0=shape(1,1).L;
+    function draw(){var k=+kn.value,n=+rs.value,s=shape(k,n);land.setAttribute('d',s.d);
+      out.textContent='知道的面积 ×'+(k*k)+'　不知道的边界 ×'+(s.L/L0).toFixed(1);}
+    kn.addEventListener('input',draw);rs.addEventListener('input',draw);draw();
+  }
+
+  /* 目录随读随亮 */
+  var links={};document.querySelectorAll('.toc a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){for(var id in links)links[id].classList.toggle('on',id===e.target.id);}});},{rootMargin:'-15% 0px -75% 0px'});
+    document.querySelectorAll('main .sec[id]').forEach(function(s){io.observe(s);});
+  }
+})();
+</script>
+</body>
+</html>
